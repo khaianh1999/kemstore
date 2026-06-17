@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <title>
+        KemStore.vn | Sticker, Đồ dùng học tập, Văn phòng phẩm dễ thương
+    </title>
+
+    <meta name="description"
+        content="KemStore.vn - Thế giới đồ dùng học tập đáng yêu của Mèo Kem. Sticker, sổ tay, bút viết, bookmark, hộp quà và phụ kiện học tập dành cho học sinh.">
+
+    <meta name="keywords"
+        content="sticker, đồ dùng học tập, mèo kem, kemstore, sticker cute, văn phòng phẩm, bút viết, sổ tay">
+
+    <meta name="robots"
+        content="index,follow,max-image-preview:large">
+
+    <link rel="canonical"
+        href="https://kemstore.vn">
+
+    <!-- Open Graph -->
+
+    <meta property="og:type"
+        content="website">
+
+    <meta property="og:title"
+        content="KemStore.vn - Học tập vui vẻ cùng Mèo Kem">
+
+    <meta property="og:description"
+        content="Sticker, đồ dùng học tập, văn phòng phẩm siêu dễ thương dành cho học sinh">
+
+    <meta property="og:url"
+        content="https://kemstore.vn">
+
+    <meta property="og:image"
+        content="./assets/meo-kem-banner.jpg">
+
+    <!-- Twitter -->
+
+    <meta name="twitter:card"
+        content="summary_large_image">
+
+    <meta name="twitter:title"
+        content="KemStore.vn">
+
+    <meta name="twitter:description"
+        content="Học tập vui vẻ cùng Mèo Kem">
+
+    <meta name="twitter:image"
+        content="./assets/meo-kem-banner.jpg">
+
+    <!-- Fonts -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Vue -->
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Axios -->
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Schema Organization -->
+
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Organization",
+        "name":"KemStore.vn",
+        "url":"https://kemstore.vn",
+        "logo":"https://kemstore.vn/assets/logo.png",
+        "sameAs":[
+            "https://www.facebook.com/",
+            "https://www.youtube.com/",
+            "https://www.tiktok.com/"
+        ]
+    }
+    </script>
+
+    <!-- Schema Website -->
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebSite",
+      "name":"KemStore.vn",
+      "url":"https://kemstore.vn",
+      "potentialAction":{
+         "@type":"SearchAction",
+         "target":"https://kemstore.vn/?search={search_term_string}",
+         "query-input":"required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Schema Store -->
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Store",
+      "name":"KemStore.vn",
+      "image":"https://kemstore.vn/assets/logo.png",
+      "url":"https://kemstore.vn",
+      "telephone":"+84",
+      "priceRange":"₫₫",
+      "description":"Đồ dùng học tập và sticker dễ thương dành cho học sinh"
+    }
+    </script>
+
+    <style>
+
+        *{
+            font-family:'Quicksand',sans-serif;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:#fff8f6;
+        }
+
+        .gradient-kem{
+            background:
+            linear-gradient(
+                135deg,
+                #ffd5d5,
+                #ffe8cc,
+                #fff5d7
+            );
+        }
+
+        .shadow-kem{
+            box-shadow:
+            0 15px 35px rgba(0,0,0,.08);
+        }
+
+        .card-hover{
+            transition:.3s;
+        }
+
+        .card-hover:hover{
+            transform:translateY(-5px);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar{
+            display:none;
+        }
+
+        .hide-scrollbar{
+            scrollbar-width:none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- HEADER -->
+
+    <header
+        class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+
+        <div
+            class="max-w-7xl mx-auto px-4">
+
+            <div
+                class="h-16 flex items-center justify-between">
+
+                <a href="/"
+                    class="flex items-center gap-3">
+
+                    <img
+                        src="./assets/logo.png"
+                        alt="Mèo Kem"
+                        class="w-12 h-12 rounded-full">
+
+                    <div>
+
+                        <h1
+                            class="font-extrabold text-pink-500 text-xl">
+                            KemStore.vn
+                        </h1>
+
+                        <p
+                            class="text-xs text-gray-500">
+                            Học tập vui vẻ cùng Mèo Kem
+                        </p>
+
+                    </div>
+
+                </a>
+
+                <nav
+                    class="hidden md:flex items-center gap-6">
+
+                    <a href="#home"
+                        class="font-semibold">
+                        Trang chủ
+                    </a>
+
+                    <a href="#products"
+                        class="font-semibold">
+                        Sản phẩm
+                    </a>
+
+                    <a href="#meokem"
+                        class="font-semibold">
+                        Mèo Kem
+                    </a>
+
+                    <a href="#blog"
+                        class="font-semibold">
+                        Blog
+                    </a>
+
+                    <a href="#contact"
+                        class="font-semibold">
+                        Liên hệ
+                    </a>
+
+                </nav>
+
+                <button
+                    @click="showMobileMenu=true"
+                    class="md:hidden">
+
+                    <i
+                        class="fa-solid fa-bars text-xl">
+                    </i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section
+        id="home"
+        class="gradient-kem">
+
+        <div
+            class="max-w-7xl mx-auto px-4 py-16">
+
+            <div
+                class="grid md:grid-cols-2 gap-10 items-center">
+
+                <div>
+
+                    <div
+                        class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow mb-5">
+
+                        🐱
+                        <span>
+                            Nhân vật độc quyền Mèo Kem
+                        </span>
+
+                    </div>
+
+                    <h2
+                        class="text-5xl font-extrabold leading-tight">
+
+                        Thế giới
+                        <span class="text-pink-500">
+                            Sticker
+                        </span>
+
+                        &
+                        <span class="text-orange-500">
+                            Đồ dùng học tập
+                        </span>
+
+                        đáng yêu
+
+                    </h2>
+
+                    <p
+                        class="text-gray-600 mt-6 text-lg">
+
+                        Sticker, sổ tay, bút viết,
+                        bookmark, hộp quà và hàng trăm
+                        món đồ học tập siêu cute dành cho học sinh.
+
+                    </p>
+
+                    <div
+                        class="flex flex-wrap gap-4 mt-8">
+
+                        <a
+                            href="#products"
+                            class="bg-pink-500 text-white px-8 py-4 rounded-full font-bold">
+
+                            🛒 Mua ngay
+
+                        </a>
+
+                        <a
+                            href="#voucher"
+                            class="bg-white px-8 py-4 rounded-full font-bold">
+
+                            🎁 Nhận voucher
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="text-center">
+
+                    <img
+                        src="./assets/meo-kem-main.png"
+                        alt="Mèo Kem"
+                        class="w-full max-w-lg mx-auto">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- STATS -->
+
+    <section
+        class="py-10 bg-white">
+
+        <div
+            class="max-w-7xl mx-auto px-4">
+
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                <div
+                    class="bg-pink-50 rounded-2xl p-5 text-center">
+
+                    <h3
+                        class="text-3xl font-extrabold text-pink-500">
+
+                        30K+
+
+                    </h3>
+
+                    <p>
+                        YouTube Subscriber
+                    </p>
+
+                </div>
+
+                <div
+                    class="bg-orange-50 rounded-2xl p-5 text-center">
+
+                    <h3
+                        class="text-3xl font-extrabold text-orange-500">
+
+                        40K+
+
+                    </h3>
+
+                    <p>
+                        TikTok Follower
+                    </p>
+
+                </div>
+
+                <div
+                    class="bg-blue-50 rounded-2xl p-5 text-center">
+
+                    <h3
+                        class="text-3xl font-extrabold text-blue-500">
+
+                        16K+
+
+                    </h3>
+
+                    <p>
+                        Facebook Follower
+                    </p>
+
+                </div>
+
+                <div
+                    class="bg-green-50 rounded-2xl p-5 text-center">
+
+                    <h3
+                        class="text-3xl font-extrabold text-green-500">
+
+                        1000+
+
+                    </h3>
+
+                    <p>
+                        Khách hàng
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BANNER BACK TO SCHOOL -->
+
+    <section
+        class="py-10">
+
+        <div
+            class="max-w-7xl mx-auto px-4">
+
+            <div
+                class="rounded-3xl overflow-hidden gradient-kem shadow-kem">
+
+                <div
+                    class="grid md:grid-cols-2 items-center">
+
+                    <div
+                        class="p-10">
+
+                        <h2
+                            class="text-4xl font-extrabold">
+
+                            🎒 Back To School
+
+                        </h2>
+
+                        <p
+                            class="mt-5 text-lg">
+
+                            Combo học tập siêu tiết kiệm,
+                            sticker Mèo Kem độc quyền,
+                            số lượng giới hạn.
+
+                        </p>
+
+                        <button
+                            class="mt-6 bg-pink-500 text-white px-8 py-4 rounded-full font-bold">
+
+                            Xem combo
+
+                        </button>
+
+                    </div>
+
+                    <div>
+
+                        <img
+                            src="./assets/banner-backtoschool.png"
+                            alt="Back To School">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCT SECTION -->
+
+    <section
+        id="products"
+        class="py-16">
+
+        <div
+            class="max-w-7xl mx-auto px-4">
+
+            <div
+                class="text-center mb-10">
+
+                <h2
+                    class="text-5xl font-extrabold">
+
+                    🛍️ Sản phẩm nổi bật
+
+                </h2>
+
+                <p
+                    class="mt-4 text-gray-500">
+
+                    Hơn 500+ mẫu sticker và đồ dùng học tập
+
+                </p>
+
+            </div>
+
+            <!-- SEARCH -->
+
+            <div
+                class="max-w-xl mx-auto mb-8">
+
+                <div
+                    class="relative">
+
+                    <input
+                        v-model="keyword"
+                        type="text"
+                        placeholder="Tìm sản phẩm..."
+
+                        class="w-full border-2 border-pink-200 rounded-full pl-12 pr-5 py-4">
+
+                    <i
+                        class="fa-solid fa-search absolute left-4 top-5 text-gray-400">
+                    </i>
+
+                </div>
+
+            </div>
+
+            <!-- FILTER -->
+
+            <div
+                class="flex gap-3 overflow-x-auto hide-scrollbar mb-10">
+
+                <button
+                    @click="changeCategory('all')"
+
+                    :class="category=='all'
+                    ?'bg-pink-500 text-white'
+                    :'bg-white'"
+
+                    class="px-5 py-3 rounded-full whitespace-nowrap">
+
+                    Tất cả
+
+                </button>
+
+                <button
+                    v-for="item in categories"
+
+                    :key="item.id"
+
+                    @click="changeCategory(item.slug)"
+
+                    :class="category==item.slug
+                    ?'bg-pink-500 text-white'
+                    :'bg-white'"
+
+                    class="px-5 py-3 rounded-full whitespace-nowrap">
+
+                    {{item.name}}
+
+                </button>
+
+            </div>
+
+            <!-- PRODUCTS -->
+
+            <div
+                class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div
+
+                    v-for="product in productsFilter"
+
+                    :key="product.id"
+
+                    class="bg-white rounded-3xl overflow-hidden shadow-kem card-hover">
+
+                    <div
+                        class="relative">
+
+                        <img
+                            :src="product.image"
+
+                            :alt="product.name"
+
+                            class="w-full aspect-square object-cover">
+
+                        <button
+
+                            @click="toggleWishlist(product)"
+
+                            class="absolute top-3 right-3 bg-white w-10 h-10 rounded-full">
+
+                            <i
+
+                                :class="product.favorite
+                                ? 'fa-solid fa-heart text-red-500'
+                                : 'fa-regular fa-heart'">
+
+                            </i>
+
+                        </button>
+
+                        <div
+
+                            v-if="product.discount"
+
+                            class="absolute left-3 top-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs">
+
+                            -{{product.discount}}%
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="p-5">
+
+                        <h3
+                            class="font-bold line-clamp-2 h-12">
+
+                            {{product.name}}
+
+                        </h3>
+
+                        <div
+                            class="mt-3 flex items-center gap-2">
+
+                            <span
+                                class="text-pink-500 font-extrabold text-xl">
+
+                                {{formatMoney(product.price)}}
+
+                            </span>
+
+                            <span
+
+                                v-if="product.oldPrice"
+
+                                class="line-through text-gray-400">
+
+                                {{formatMoney(product.oldPrice)}}
+
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="mt-3">
+
+                            <span
+                                class="text-yellow-500">
+
+                                ⭐⭐⭐⭐⭐
+
+                            </span>
+
+                            <span
+                                class="text-sm text-gray-500">
+
+                                ({{product.review}})
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="flex gap-2 mt-5">
+
+                            <button
+
+                                @click="quickView(product)"
+
+                                class="flex-1 border rounded-xl py-3">
+
+                                Xem
+
+                            </button>
+
+                            <a
+
+                                :href="product.link"
+
+                                target="_blank"
+
+                                class="flex-1 bg-pink-500 text-white rounded-xl py-3 text-center">
+
+                                Mua
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QUICK VIEW -->
+
+    <div
+
+        v-if="productModal"
+
+        class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+
+        <div
+            class="bg-white rounded-3xl max-w-5xl w-full overflow-hidden">
+
+            <div
+                class="grid md:grid-cols-2">
+
+                <div>
+
+                    <img
+
+                        :src="productModal.image"
+
+                        class="w-full">
+
+                </div>
+
+                <div
+                    class="p-8">
+
+                    <div
+                        class="flex justify-between">
+
+                        <h2
+                            class="text-3xl font-bold">
+
+                            {{productModal.name}}
+
+                        </h2>
+
+                        <button
+
+                            @click="productModal=null">
+
+                            <i
+                                class="fa-solid fa-xmark text-2xl">
+                            </i>
+
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="mt-5 text-pink-500 text-3xl font-extrabold">
+
+                        {{formatMoney(productModal.price)}}
+
+                    </div>
+
+                    <p
+                        class="mt-5 text-gray-600">
+
+                        {{productModal.description}}
+
+                    </p>
+
+                    <ul
+                        class="mt-5 space-y-2">
+
+                        <li>
+                            ✅ Chất lượng cao
+                        </li>
+
+                        <li>
+                            ✅ Thiết kế độc quyền
+                        </li>
+
+                        <li>
+                            ✅ Giao hàng toàn quốc
+                        </li>
+
+                    </ul>
+
+                    <div
+                        class="flex gap-3 mt-8">
+
+                        <a
+
+                            :href="productModal.link"
+
+                            target="_blank"
+
+                            class="bg-pink-500 text-white px-8 py-4 rounded-full">
+
+                            Mua ngay
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- MEO KEM SECTION -->
+
+    <section
+        id="meokem"
+        class="py-20 bg-white">
+
+        <div
+            class="max-w-7xl mx-auto px-4">
+
+            <div
+                class="text-center mb-12">
+
+                <h2
+                    class="text-5xl font-extrabold">
+
+                    🐱 Gặp gỡ Mèo Kem
+
+                </h2>
+
+                <p
+                    class="text-gray-500 mt-4">
+
+                    Người bạn đồng hành đáng yêu trong học tập
+
+                </p>
+
+            </div>
+
+            <div
+                class="grid md:grid-cols-4 gap-6">
+
+                <div
+                    class="bg-pink-50 rounded-3xl p-6 text-center">
+
+                    <img
+                        src="./assets/meo-kem-study.png"
+                        alt="Mèo Kem học bài"
+                        class="mx-auto mb-4">
+
+                    <h3
+                        class="font-bold text-xl">
+
+                        📚 Học bài
+
+                    </h3>
+
+                    <p
+                        class="text-gray-500 mt-2">
+
+                        Chăm chỉ mỗi ngày
+
+                    </p>
+
+                </div>
+
+                <div
+                    class="bg-yellow-50 rounded-3xl p-6 text-center">
+
+                    <img
+                        src="./assets/meo-kem-draw.png"
+                        alt="Mèo Kem vẽ tranh"
+                        class="mx-auto mb-4">
+
+                    <h3
+                        class="font-bold text-xl">
+
+                        🎨 Sáng tạo
+
+                    </h3>
+
+                    <p
+                        class="text-gray-500 mt-2">
+
+                        Vẽ tranh và trang trí
+
+                    </p>
+
+                </div>
+
+                <div
+                    class="bg-blue-50 rounded-3xl p-6 text-center">
+
+                    <img
+                        src="./assets/meo-kem-reading.png"
+                        alt="Mèo Kem đọc sách"
+                        class="mx-auto mb-4">
+
+                    <h3
+                        class="font-bold text-xl">
+
+                        📖 Đọc sách
+
+                    </h3>
+
+                    <p
+                        class="text-gray-500 mt-2">
+
+                        Khám phá tri thức
+
+                    </p>
+
+                </div>
+
+                <div
+                    class="bg-green-50 rounded-3xl p-6 text-center">
+
+                    <img
+                        src="./assets/meo-kem-sleep.png"
+                        alt="Mèo Kem ngủ"
+                        class="mx-auto mb-4">
+
+                    <h3
+                        class="font-bold text-xl">
+
+                        💤 Nghỉ ngơi
+
+                    </h3>
+
+                    <p
+                        class="text-gray-500 mt-2">
+
+                        Nạp năng lượng
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMBO BUILDER -->
+
+    <section
+        class="py-20">
+
+        <div
+            class="max-w-7xl mx-auto px-4">
+
+            <div
+                class="bg-white rounded-3xl p-8 shadow-kem">
+
+                <h2
+                    class="text-4xl font-extrabold text-center">
+
+                    🎁 Tự tạo Combo
+
+                </h2>
+
+                <p
+                    class="text-center text-gray-500 mt-3">
+
+                    Chọn sản phẩm yêu thích của bạn
+
+                </p>
+
+                <div
+                    class="grid md:grid-cols-3 gap-6 mt-10">
+
+                    <div>
+
+                        <label
+                            class="font-bold">
+
+                            Sticker
+
+                        </label>
+
+                        <select
+                            class="w-full border rounded-xl p-3 mt-2">
+
+                            <option>
+                                Sticker Mèo Kem
+                            </option>
+
+                            <option>
+                                Sticker Công Chúa
+                            </option>
+
+                            <option>
+                                Sticker Cute
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label
+                            class="font-bold">
+
+                            Sổ tay
+
+                        </label>
+
+                        <select
+                            class="w-full border rounded-xl p-3 mt-2">
+
+                            <option>
+                                Sổ Mini
+                            </option>
+
+                            <option>
+                                Sổ Nhật Ký
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label
+                            class="font-bold">
+
+                            Bút
+
+                        </label>
+
+                        <select
+                            class="w-full border rounded-xl p-3 mt-2">
+
+                            <option>
+                                Bút Gel
+                            </option>
+
+                            <option>
+                                Bút Màu
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="text-center mt-10">
+
+                    <button
+                        class="bg-pink-500 text-white px-10 py-4 rounded-full">
+
+                        🛒 Tạo Combo
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STICKER GALLERY -->
+
+    <section
+        class="py-20 bg-white">
+
+        <div
+            class="max-w-7xl mx-auto px-4">
+
+            <div
+                class="text-center mb-12">
+
+                <h2
+                    class="text-5xl font-extrabold">
+
+                    🌈 Bộ Sưu Tập Sticker
+
+                </h2>
+
+            </div>
+
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                <img
+                    src="./assets/sticker1.jpg"
+                    class="rounded-3xl">
+
+                <img
+                    src="./assets/sticker2.jpg"
+                    class="rounded-3xl">
+
+                <img
+                    src="./assets/sticker3.jpg"
+                    class="rounded-3xl">
+
+                <img
+                    src="./assets/sticker4.jpg"
+                    class="rounded-3xl">
+
+                <img
+                    src="./assets/sticker5.jpg"
+                    class="rounded-3xl">
+
+                <img
+                    src="./assets/sticker6.jpg"
+                    class="rounded-3xl">
+
+                <img
+                    src="./assets/sticker7.jpg"
+                    class="rounded-3xl">
+
+                <img
+                    src="./assets/sticker8.jpg"
+                    class="rounded-3xl">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- VOUCHER -->
+
+    <section
+        id="voucher"
+        class="py-20">
+
+        <div
+            class="max-w-4xl mx-auto px-4">
+
+            <div
+                class="gradient-kem rounded-3xl p-10 text-center">
+
+                <h2
+                    class="text-5xl font-extrabold">
+
+                    🎁 Nhận Voucher 10%
+
+                </h2>
+
+                <p
+                    class="mt-4">
+
+                    Đăng ký ngay để nhận ưu đãi từ Mèo Kem
+
+                </p>
+
+                <form
+                    class="mt-8">
+
+                    <div
+                        class="grid md:grid-cols-2 gap-4">
+
+                        <input
+                            type="text"
+                            placeholder="Họ tên"
+
+                            class="p-4 rounded-xl">
+
+                        <input
+                            type="text"
+                            placeholder="Số điện thoại"
+
+                            class="p-4 rounded-xl">
+
+                        <input
+                            type="email"
+                            placeholder="Email"
+
+                            class="p-4 rounded-xl md:col-span-2">
+
+                    </div>
+
+                    <button
+                        class="mt-6 bg-pink-500 text-white px-10 py-4 rounded-full">
+
+                        Nhận Voucher
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section
+        id="contact"
+        class="py-20 bg-white">
+
+        <div
+            class="max-w-5xl mx-auto px-4">
+
+            <div
+                class="text-center mb-12">
+
+                <h2
+                    class="text-5xl font-extrabold">
+
+                    💬 Tư Vấn Miễn Phí
+
+                </h2>
+
+            </div>
+
+            <form
+                class="grid md:grid-cols-2 gap-5">
+
+                <input
+                    type="text"
+                    placeholder="Họ tên"
+
+                    class="border rounded-xl p-4">
+
+                <input
+                    type="text"
+                    placeholder="Số điện thoại"
+
+                    class="border rounded-xl p-4">
+
+                <input
+                    type="email"
+                    placeholder="Email"
+
+                    class="border rounded-xl p-4 md:col-span-2">
+
+                <textarea
+                    rows="5"
+                    placeholder="Nội dung tư vấn"
+
+                    class="border rounded-xl p-4 md:col-span-2"></textarea>
+
+                <button
+                    class="bg-pink-500 text-white py-4 rounded-xl md:col-span-2">
+
+                    Gửi yêu cầu
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>

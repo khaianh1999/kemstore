@@ -1,0 +1,3056 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <title>
+        KemStore.vn | Sticker, Đồ dùng học tập, Văn phòng phẩm dễ thương
+    </title>
+
+    <meta name="description"
+        content="KemStore.vn - Thế giới đồ dùng học tập đáng yêu của Mèo Kem. Sticker, sổ tay, bút viết, bookmark, hộp quà và phụ kiện học tập dành cho học sinh.">
+
+    <meta name="keywords"
+        content="sticker, đồ dùng học tập, mèo kem, kemstore, sticker cute, văn phòng phẩm, bút viết, sổ tay">
+
+    <meta name="robots" content="index,follow,max-image-preview:large">
+
+    <link rel="canonical" href="https://kemstore.vn">
+
+    <link rel="icon" type="image/png" href="./assets/images/favicon.PNG">
+
+    <link rel="apple-touch-icon" href="./assets/images/favicon.PNG">
+
+    <!-- Open Graph -->
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:title" content="KemStore.vn - Học tập vui vẻ cùng Mèo Kem">
+
+    <meta property="og:description" content="Sticker, đồ dùng học tập, văn phòng phẩm siêu dễ thương dành cho học sinh">
+
+    <meta property="og:url" content="https://kemstore.vn">
+
+    <meta property="og:image" content="./assets/images/logo.jpg">
+
+    <!-- Twitter -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="KemStore.vn">
+
+    <meta name="twitter:description" content="Học tập vui vẻ cùng Mèo Kem">
+
+    <meta name="twitter:image" content="./assets/images/logo.jpg">
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="preload" href="./assets/images/logo.jpg" as="image">
+
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Tailwind -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kem: {
+                            DEFAULT: '#ee5f6d',
+                            50: '#fef2f3',
+                            100: '#fce8ea',
+                            200: '#f9d0d5',
+                            400: '#f47d8a',
+                            500: '#ee5f6d',
+                            600: '#e04a59'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        media="print" onload="this.media='all'">
+
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </noscript>
+
+    <!-- Schema Organization -->
+
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Organization",
+        "name":"KemStore.vn",
+        "url":"https://kemstore.vn",
+        "logo":"https://kemstore.vn/assets/images/logo.jpg",
+        "sameAs":[
+            "https://www.facebook.com/tiemtaphoanhakem01",
+            "https://www.youtube.com/@tiemtaphoanhakem",
+            "https://www.tiktok.com/@tiemtaphoanhakem_01",
+            "https://shopee.vn/tiemtaphoanhakemm"
+        ]
+    }
+    </script>
+
+    <!-- Schema Website -->
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebSite",
+      "name":"KemStore.vn",
+      "url":"https://kemstore.vn",
+      "potentialAction":{
+         "@type":"SearchAction",
+         "target":"https://kemstore.vn/?search={search_term_string}",
+         "query-input":"required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Schema Store -->
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Store",
+      "name":"KemStore.vn",
+      "image":"https://kemstore.vn/assets/images/logo.jpg",
+      "url":"https://kemstore.vn",
+      "telephone":"+84",
+      "priceRange":"₫₫",
+      "description":"Đồ dùng học tập và sticker dễ thương dành cho học sinh"
+    }
+    </script>
+
+    <style>
+        * {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fff8f6;
+        }
+
+        /* Ẩn popup/modal trước khi Vue mount — tránh nháy */
+        #app:not([data-v-app]) .vue-overlay {
+            display: none !important;
+        }
+
+        [v-cloak] {
+            display: none !important;
+        }
+
+        .gradient-kem {
+            background:
+                linear-gradient(135deg,
+                    #fce8ea,
+                    #ffe8cc,
+                    #fff5d7);
+        }
+
+        .text-kem {
+            color: #ee5f6d;
+        }
+
+        .bg-kem {
+            background-color: #ee5f6d;
+        }
+
+        .border-kem {
+            border-color: #ee5f6d;
+        }
+
+        .hover\:bg-kem-600:hover {
+            background-color: #e04a59;
+        }
+
+        .shadow-kem {
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, .08);
+        }
+
+        .card-hover {
+            transition: .3s;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            scrollbar-width: none;
+        }
+
+        .mobile-drawer-enter-active,
+        .mobile-drawer-leave-active {
+            transition: opacity .35s ease;
+        }
+
+        .mobile-drawer-enter-active .mobile-drawer-backdrop,
+        .mobile-drawer-leave-active .mobile-drawer-backdrop {
+            transition: opacity .35s ease;
+        }
+
+        .mobile-drawer-enter-active .mobile-drawer-panel,
+        .mobile-drawer-leave-active .mobile-drawer-panel {
+            transition: transform .38s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .mobile-drawer-enter-from,
+        .mobile-drawer-leave-to {
+            opacity: 0;
+        }
+
+        .mobile-drawer-enter-from .mobile-drawer-backdrop,
+        .mobile-drawer-leave-to .mobile-drawer-backdrop {
+            opacity: 0;
+        }
+
+        .mobile-drawer-enter-from .mobile-drawer-panel,
+        .mobile-drawer-leave-to .mobile-drawer-panel {
+            transform: translateX(100%);
+        }
+
+        .mobile-drawer-backdrop {
+            background: rgba(15, 23, 42, .55);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .mobile-nav-item {
+            transition: background-color .2s ease, color .2s ease, transform .2s ease;
+        }
+
+        .mobile-nav-item:active {
+            transform: scale(.98);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <noscript>
+        <div
+            style="max-width:48rem;margin:1rem auto;padding:1rem;background:#fff;border:1px solid #f9d0d5;border-radius:1rem;font-family:Quicksand,sans-serif">
+            <h1 style="font-size:1.5rem;font-weight:800;color:#ee5f6d">KemStore.vn — Sticker &amp; đồ dùng học tập Mèo
+                Kem</h1>
+            <p>Sticker cute, sổ tay, bút viết, bookmark và combo học tập. Mua tại Shopee: tiemtaphoanhakemm</p>
+            <p><a href="https://shopee.vn/tiemtaphoanhakemm">Mua trên Shopee</a> · <a href="#contact">Liên hệ</a></p>
+        </div>
+    </noscript>
+
+    <div id="app">
+
+        <!-- HEADER -->
+
+        <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+
+            <div class="max-w-7xl mx-auto px-4">
+
+                <div class="h-16 flex items-center justify-between">
+
+                    <a href="/" class="flex items-center gap-3">
+
+                        <img src="./assets/images/logo.jpg" alt="Mèo Kem - KemStore.vn"
+                            class="w-12 h-12 rounded-full object-cover" onerror="this.src='./assets/images/logo.jpg'">
+
+                        <div>
+
+                            <p class="font-extrabold text-kem text-xl">
+                                KemStore.vn
+                            </p>
+
+                            <p class="text-xs text-gray-500">
+                                Học tập vui vẻ cùng Mèo Kem
+                            </p>
+
+                        </div>
+
+                    </a>
+
+                    <nav class="hidden md:flex items-center gap-6">
+
+                        <a href="#home" class="font-semibold">
+                            Trang chủ
+                        </a>
+
+                        <a href="#products" class="font-semibold">
+                            Sản phẩm
+                        </a>
+
+                        <a href="#meokem" class="font-semibold">
+                            Mèo Kem
+                        </a>
+
+                        <a href="#blog" class="font-semibold">
+                            Blog
+                        </a>
+
+                        <a href="#contact" class="font-semibold">
+                            Liên hệ
+                        </a>
+
+                        <a :href="socialLinks.shopee" target="_blank" rel="noopener noreferrer"
+                            class="bg-kem hover:bg-kem-600 text-white px-5 py-2 rounded-full font-bold text-sm transition">
+                            Shopee
+                        </a>
+
+                    </nav>
+
+                    <button @click="showMobileMenu=true" type="button" aria-label="Mở menu"
+                        class="md:hidden w-11 h-11 flex items-center justify-center rounded-2xl bg-kem-50 text-kem border border-kem-200/60 shadow-sm active:scale-95 transition">
+
+                        <i class="fa-solid fa-bars text-lg"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- MOBILE MENU -->
+
+            <!-- Teleport để tránh lỗi fixed bị cắt trên mobile (do backdrop-filter/sticky). -->
+            <teleport to="body">
+
+                <Transition name="mobile-drawer">
+
+                    <div v-if="showMobileMenu" class="vue-overlay md:hidden fixed inset-0 z-[60]" role="dialog"
+                        aria-modal="true" aria-label="Menu điều hướng">
+
+                        <div class="mobile-drawer-backdrop absolute inset-0" @click="closeMobileMenu">
+                        </div>
+
+                        <aside
+                            class="mobile-drawer-panel absolute top-0 right-0 h-full w-80 max-w-[92vw] bg-white shadow-2xl flex flex-col overflow-hidden">
+
+                            <div class="gradient-kem px-5 pt-5 pb-6 border-b border-white/60 relative shrink-0">
+
+                                <button @click="closeMobileMenu" type="button" aria-label="Đóng menu"
+                                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 text-gray-600 shadow-sm flex items-center justify-center active:scale-95 transition">
+
+                                    <i class="fa-solid fa-xmark text-lg"></i>
+
+                                </button>
+
+                                <div class="flex items-center gap-3 pr-12">
+
+                                    <img src="./assets/images/logo.jpg" alt="KemStore.vn"
+                                        class="w-14 h-14 rounded-2xl object-cover border-2 border-white shadow-md">
+
+                                    <div>
+
+                                        <p class="font-extrabold text-gray-800 text-lg leading-tight">
+                                            KemStore.vn
+                                        </p>
+
+                                        <p class="text-xs text-gray-600 mt-0.5">
+                                            Học tập vui vẻ cùng Mèo Kem
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <nav class="flex-1 overflow-y-auto px-4 py-5 space-y-2">
+
+                                <p class="px-2 text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-3">
+                                    Danh mục
+                                </p>
+
+                                <a v-for="item in mobileNavItems" :key="item.href" :href="item.href"
+                                    @click="closeMobileMenu"
+                                    class="mobile-nav-item flex items-center gap-3.5 px-3 py-3.5 rounded-2xl text-gray-700 font-semibold hover:bg-kem-50 hover:text-kem">
+
+                                    <span
+                                        class="w-11 h-11 rounded-xl bg-kem-50 text-kem flex items-center justify-center shrink-0 text-base">
+
+                                        <i :class="item.icon"></i>
+
+                                    </span>
+
+                                    <span class="flex-1">{{ item.label }}</span>
+
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-300"></i>
+
+                                </a>
+
+                            </nav>
+
+                            <div class="shrink-0 p-4 border-t border-gray-100 bg-gray-50/80">
+
+                                <p class="text-xs font-semibold text-gray-500 text-center mb-3">
+                                    Theo dõi Mèo Kem
+                                </p>
+
+                                <div class="flex justify-center gap-2.5 mb-4">
+
+                                    <a :href="socialLinks.facebook" target="_blank" rel="noopener noreferrer"
+                                        class="w-11 h-11 rounded-2xl bg-white border border-gray-200 text-kem flex items-center justify-center shadow-sm active:scale-95 transition"
+                                        title="Facebook">
+                                        <i class="fa-brands fa-facebook text-lg"></i>
+                                    </a>
+
+                                    <a :href="socialLinks.tiktok" target="_blank" rel="noopener noreferrer"
+                                        class="w-11 h-11 rounded-2xl bg-white border border-gray-200 text-kem flex items-center justify-center shadow-sm active:scale-95 transition"
+                                        title="TikTok">
+                                        <i class="fa-brands fa-tiktok text-lg"></i>
+                                    </a>
+
+                                    <a :href="socialLinks.youtube" target="_blank" rel="noopener noreferrer"
+                                        class="w-11 h-11 rounded-2xl bg-white border border-gray-200 text-kem flex items-center justify-center shadow-sm active:scale-95 transition"
+                                        title="YouTube">
+                                        <i class="fa-brands fa-youtube text-lg"></i>
+                                    </a>
+
+                                </div>
+
+                                <a :href="socialLinks.shopee" target="_blank" rel="noopener noreferrer"
+                                    class="flex items-center justify-center gap-2.5 w-full bg-kem hover:bg-kem-600 text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-kem/25 active:scale-[.98] transition">
+
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                    Mua trên Shopee
+
+                                </a>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </Transition>
+
+            </teleport>
+
+        </header>
+
+        <!-- HERO -->
+
+        <section id="home" class="gradient-kem">
+
+            <div class="max-w-7xl mx-auto px-4 py-14 md:py-16">
+
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+                    <!-- LEFT: SEO + CTA -->
+
+                    <div>
+
+                        <div
+                            class="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-white/60 mb-6">
+
+                            <span class="text-lg">🐱</span>
+                            <span class="font-semibold text-gray-700">
+                                Nhân vật độc quyền Mèo Kem
+                            </span>
+
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] text-gray-900">
+
+                            Sticker &amp; đồ dùng học tập
+                            <span class="text-kem">dễ thương</span>
+                            cho học sinh
+
+                        </h1>
+
+                        <p class="text-gray-700 mt-6 text-lg leading-relaxed">
+
+                            KemStore.vn chuyên
+                            <strong>sticker cute</strong>,
+                            <strong>văn phòng phẩm</strong>,
+                            <strong>đồ dùng học tập</strong> (sổ tay, bút, bookmark, hộp quà...)
+                            với thiết kế độc quyền, phù hợp học sinh – sinh viên.
+
+                        </p>
+
+                        <div class="mt-7 flex flex-wrap gap-3">
+
+                            <div
+                                class="flex items-center gap-2 bg-white/85 border border-white/70 rounded-2xl px-4 py-3 shadow-sm">
+                                <i class="fa-solid fa-truck-fast text-kem"></i>
+                                <span class="font-semibold text-gray-700">Giao hàng toàn quốc</span>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-2 bg-white/85 border border-white/70 rounded-2xl px-4 py-3 shadow-sm">
+                                <i class="fa-solid fa-wand-magic-sparkles text-kem"></i>
+                                <span class="font-semibold text-gray-700">Thiết kế độc quyền</span>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-2 bg-white/85 border border-white/70 rounded-2xl px-4 py-3 shadow-sm">
+                                <i class="fa-solid fa-heart text-kem"></i>
+                                <span class="font-semibold text-gray-700">Đáng yêu – chất lượng</span>
+                            </div>
+
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 mt-9">
+
+                            <a href="#products"
+                                class="bg-kem hover:bg-kem-600 text-white px-8 py-4 rounded-full font-bold transition shadow-lg shadow-kem/25">
+
+                                🛒 Xem sản phẩm nổi bật
+
+                            </a>
+
+                            <a :href="socialLinks.shopee" target="_blank" rel="noopener noreferrer"
+                                class="bg-white px-8 py-4 rounded-full font-bold border-2 border-kem-200 hover:bg-kem-50 transition">
+
+                                🛍️ Mua trên Shopee
+
+                            </a>
+
+                            <a href="#voucher"
+                                class="px-8 py-4 rounded-full font-bold text-gray-800 bg-white/60 border border-white/70 hover:bg-white/90 transition">
+
+                                🎁 Nhận voucher 10%
+
+                            </a>
+
+                        </div>
+
+                        <div class="mt-7 flex flex-wrap gap-2 text-sm">
+
+                            <a :href="socialLinks.youtube" target="_blank" rel="noopener noreferrer"
+                                class="bg-white/90 border border-white/60 px-4 py-2 rounded-full font-semibold text-gray-700 hover:text-kem hover:bg-white transition">
+                                <i class="fa-brands fa-youtube mr-2 text-kem"></i>
+                                YouTube
+                            </a>
+
+                            <a :href="socialLinks.tiktok" target="_blank" rel="noopener noreferrer"
+                                class="bg-white/90 border border-white/60 px-4 py-2 rounded-full font-semibold text-gray-700 hover:text-kem hover:bg-white transition">
+                                <i class="fa-brands fa-tiktok mr-2 text-kem"></i>
+                                TikTok
+                            </a>
+
+                            <a :href="socialLinks.facebook" target="_blank" rel="noopener noreferrer"
+                                class="bg-white/90 border border-white/60 px-4 py-2 rounded-full font-semibold text-gray-700 hover:text-kem hover:bg-white transition">
+                                <i class="fa-brands fa-facebook mr-2 text-kem"></i>
+                                Facebook
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT: Visual + cards -->
+
+                    <div class="relative">
+
+                        <div class="absolute -top-8 -left-8 w-40 h-40 rounded-full bg-white/50 blur-2xl">
+                        </div>
+
+                        <div class="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-white/50 blur-2xl">
+                        </div>
+
+                        <div class="bg-white/80 border border-white/60 rounded-[2rem] shadow-kem overflow-hidden">
+
+                            <div class="p-6 sm:p-7">
+
+                                <div class="flex items-start justify-between gap-4">
+
+                                    <div>
+                                        <p class="text-sm font-bold text-kem">Bộ sưu tập nổi bật</p>
+                                        <p class="text-2xl font-extrabold text-gray-900 mt-1 leading-tight">
+                                            Sticker Mèo Kem &amp; combo tựu trường
+                                        </p>
+                                        <p class="text-gray-700 mt-2">
+                                            Gợi ý nhanh các món “best seller” dễ phối cho góc học tập.
+                                        </p>
+                                    </div>
+
+                                    <div class="hidden sm:flex items-center gap-2 shrink-0">
+                                        <span
+                                            class="px-3 py-1 rounded-full bg-kem-50 text-kem font-bold text-xs border border-kem-200/50">
+                                            New
+                                        </span>
+                                        <span
+                                            class="px-3 py-1 rounded-full bg-white text-gray-700 font-bold text-xs border border-gray-200">
+                                            Cute
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="px-6 sm:px-7 pb-7">
+
+                                <div class="relative rounded-3xl overflow-hidden border border-white/70">
+                                    <img src="./assets/images/logo.jpg"
+                                        alt="KemStore.vn - Sticker và đồ dùng học tập dễ thương"
+                                        class="w-full h-64 sm:h-72 object-cover"
+                                        onerror="this.src='./assets/images/logo.jpg'">
+
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent">
+                                    </div>
+
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <div class="flex flex-wrap gap-2">
+                                            <span
+                                                class="bg-white/90 text-gray-800 px-3 py-1.5 rounded-full text-sm font-bold">
+                                                Sticker
+                                            </span>
+                                            <span
+                                                class="bg-white/90 text-gray-800 px-3 py-1.5 rounded-full text-sm font-bold">
+                                                Sổ tay
+                                            </span>
+                                            <span
+                                                class="bg-white/90 text-gray-800 px-3 py-1.5 rounded-full text-sm font-bold">
+                                                Bút
+                                            </span>
+                                            <span
+                                                class="bg-white/90 text-gray-800 px-3 py-1.5 rounded-full text-sm font-bold">
+                                                Combo
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3 mt-4">
+
+                                    <a href="#products"
+                                        class="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm hover:shadow-md transition">
+                                        <p class="text-xs font-bold text-gray-500">Danh mục</p>
+                                        <p class="font-extrabold text-gray-900 mt-1">500+ sản phẩm</p>
+                                    </a>
+
+                                    <a href="#voucher"
+                                        class="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm hover:shadow-md transition">
+                                        <p class="text-xs font-bold text-gray-500">Ưu đãi</p>
+                                        <p class="font-extrabold text-gray-900 mt-1">Voucher 10%</p>
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- STATS -->
+
+        <section class="py-14 bg-white">
+
+            <div class="max-w-7xl mx-auto px-4">
+
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+
+                    <div class="max-w-2xl">
+
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">
+                            Cộng đồng Tiệm Tạp Hóa Nhà Kem
+                        </h2>
+
+                        <p class="mt-2 text-gray-600 leading-relaxed">
+                            Theo dõi Mèo Kem để xem bộ sưu tập sticker mới, gợi ý trang trí góc học tập và săn ưu đãi
+                            nhanh nhất.
+                        </p>
+
+                    </div>
+
+                    <a :href="socialLinks.shopee" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-2.5 bg-kem hover:bg-kem-600 text-white px-6 py-3.5 rounded-2xl font-bold shadow-lg shadow-kem/25 active:scale-[.98] transition w-full md:w-auto">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Mua trên Shopee
+
+                    </a>
+
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                    <a :href="socialLinks.youtube" target="_blank" rel="noopener noreferrer"
+                        class="group bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition">
+
+                        <div class="flex items-start justify-between gap-4">
+
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-wider text-gray-400">
+                                    YouTube
+                                </p>
+                                <p class="text-3xl font-extrabold text-gray-900 mt-2">
+                                    30K+
+                                </p>
+                                <p class="text-gray-600 mt-1">
+                                    Subscriber
+                                </p>
+                            </div>
+
+                            <span
+                                class="w-12 h-12 rounded-2xl bg-kem-50 text-kem flex items-center justify-center border border-kem-200/60">
+                                <i class="fa-brands fa-youtube text-xl"></i>
+                            </span>
+
+                        </div>
+
+                        <div class="mt-5 flex items-center justify-between text-sm">
+                            <span class="font-semibold text-gray-500">Xem video mới</span>
+                            <span class="font-bold text-kem group-hover:translate-x-0.5 transition">→</span>
+                        </div>
+
+                    </a>
+
+                    <a :href="socialLinks.tiktok" target="_blank" rel="noopener noreferrer"
+                        class="group bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition">
+
+                        <div class="flex items-start justify-between gap-4">
+
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-wider text-gray-400">
+                                    TikTok
+                                </p>
+                                <p class="text-3xl font-extrabold text-gray-900 mt-2">
+                                    40K+
+                                </p>
+                                <p class="text-gray-600 mt-1">
+                                    Follower
+                                </p>
+                            </div>
+
+                            <span
+                                class="w-12 h-12 rounded-2xl bg-gray-50 text-gray-900 flex items-center justify-center border border-gray-200">
+                                <i class="fa-brands fa-tiktok text-xl"></i>
+                            </span>
+
+                        </div>
+
+                        <div class="mt-5 flex items-center justify-between text-sm">
+                            <span class="font-semibold text-gray-500">Xem trend</span>
+                            <span class="font-bold text-kem group-hover:translate-x-0.5 transition">→</span>
+                        </div>
+
+                    </a>
+
+                    <a :href="socialLinks.facebook" target="_blank" rel="noopener noreferrer"
+                        class="group bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition">
+
+                        <div class="flex items-start justify-between gap-4">
+
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-wider text-gray-400">
+                                    Facebook
+                                </p>
+                                <p class="text-3xl font-extrabold text-gray-900 mt-2">
+                                    16K+
+                                </p>
+                                <p class="text-gray-600 mt-1">
+                                    Follower
+                                </p>
+                            </div>
+
+                            <span
+                                class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-200/70">
+                                <i class="fa-brands fa-facebook text-xl"></i>
+                            </span>
+
+                        </div>
+
+                        <div class="mt-5 flex items-center justify-between text-sm">
+                            <span class="font-semibold text-gray-500">Cập nhật ưu đãi</span>
+                            <span class="font-bold text-kem group-hover:translate-x-0.5 transition">→</span>
+                        </div>
+
+                    </a>
+
+                    <a :href="socialLinks.shopee" target="_blank" rel="noopener noreferrer"
+                        class="group bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition">
+
+                        <div class="flex items-start justify-between gap-4">
+
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-wider text-gray-400">
+                                    Shopee
+                                </p>
+                                <p class="text-3xl font-extrabold text-gray-900 mt-2">
+                                    1000+
+                                </p>
+                                <p class="text-gray-600 mt-1">
+                                    Khách hàng
+                                </p>
+                            </div>
+
+                            <span
+                                class="w-12 h-12 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center border border-green-200/70">
+                                <i class="fa-solid fa-bag-shopping text-xl"></i>
+                            </span>
+
+                        </div>
+
+                        <div class="mt-5 flex items-center justify-between text-sm">
+                            <span class="font-semibold text-gray-500">Xem shop</span>
+                            <span class="font-bold text-kem group-hover:translate-x-0.5 transition">→</span>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- BANNER BACK TO SCHOOL -->
+
+        <section class="py-14" aria-labelledby="back-to-school-title">
+
+            <div class="max-w-7xl mx-auto px-4">
+
+                <div class="relative rounded-[2rem] overflow-hidden bg-white border border-kem-200/50 shadow-kem">
+
+                    <div class="absolute inset-0 gradient-kem opacity-90">
+                    </div>
+
+                    <div class="relative grid lg:grid-cols-2 items-center gap-8 p-8 sm:p-10 lg:p-12">
+
+                        <div>
+
+                            <div class="flex flex-wrap gap-2 mb-5">
+
+                                <span
+                                    class="inline-flex items-center gap-1.5 bg-white/90 text-kem px-4 py-1.5 rounded-full text-sm font-bold border border-white/70">
+                                    <i class="fa-solid fa-fire"></i>
+                                    Mùa tựu trường
+                                </span>
+
+                                <span
+                                    class="inline-flex items-center gap-1.5 bg-white/90 text-gray-700 px-4 py-1.5 rounded-full text-sm font-bold border border-white/70">
+                                    <i class="fa-solid fa-clock"></i>
+                                    Số lượng giới hạn
+                                </span>
+
+                            </div>
+
+                            <h2 id="back-to-school-title"
+                                class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">
+
+                                Combo đồ dùng học tập Back To School — tiết kiệm cùng Mèo Kem
+
+                            </h2>
+
+                            <p class="mt-4 text-gray-700 text-lg leading-relaxed">
+
+                                Gói combo gồm <strong>sticker</strong>, <strong>sổ tay</strong>, <strong>bút
+                                    viết</strong> và phụ kiện trang trí — phù hợp học sinh, sinh viên chuẩn bị năm học
+                                mới. Thiết kế độc quyền, dễ thương, dễ phối góc học tập.
+
+                            </p>
+
+                            <ul class="mt-6 space-y-3">
+
+                                <li v-for="(item, index) in schoolBenefits" :key="index"
+                                    class="flex items-center gap-3 text-gray-800 font-semibold">
+
+                                    <span
+                                        class="w-9 h-9 rounded-xl bg-white/90 text-kem flex items-center justify-center shrink-0 border border-white/70">
+                                        <i :class="item.icon"></i>
+                                    </span>
+                                    {{ item.text }}
+
+                                </li>
+
+                            </ul>
+
+                            <div class="flex flex-wrap gap-4 mt-8">
+
+                                <a :href="socialLinks.shopee" target="_blank" rel="noopener noreferrer"
+                                    class="bg-kem hover:bg-kem-600 text-white px-8 py-4 rounded-2xl font-bold transition shadow-lg shadow-kem/25">
+
+                                    <i class="fa-solid fa-bag-shopping mr-2"></i>
+                                    Xem combo trên Shopee
+
+                                </a>
+
+                                <a href="#products"
+                                    class="bg-white/90 hover:bg-white text-gray-800 px-8 py-4 rounded-2xl font-bold border border-white/80 transition">
+
+                                    Xem sản phẩm lẻ
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="relative">
+
+                            <div class="relative rounded-3xl overflow-hidden border-4 border-white/80 shadow-xl">
+
+                                <img src="./assets/images/logo.jpg"
+                                    alt="Combo Back To School - sticker và đồ dùng học tập Mèo Kem KemStore.vn"
+                                    class="w-full h-64 sm:h-80 object-cover" loading="lazy"
+                                    onerror="this.src='./assets/images/logo.jpg'">
+
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none">
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="absolute -bottom-4 -left-4 bg-white rounded-2xl px-5 py-4 shadow-lg border border-gray-100 hidden sm:block">
+
+                                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Ưu đãi</p>
+                                <p class="text-2xl font-extrabold text-kem mt-0.5">Giảm đến 35%</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PRODUCT SECTION -->
+
+        <section id="products" class="py-16 bg-white" aria-labelledby="products-title">
+
+            <div class="max-w-7xl mx-auto px-4">
+
+                <div class="max-w-3xl mx-auto text-center mb-10">
+
+                    <p class="text-sm font-bold uppercase tracking-wider text-kem mb-3">
+                        Danh mục sản phẩm
+                    </p>
+
+                    <h2 id="products-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
+
+                        Sticker &amp; đồ dùng học tập nổi bật
+
+                    </h2>
+
+                    <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+
+                        KemStore.vn có hơn <strong>500+ mẫu sticker cute</strong>, sổ tay, bút viết, bookmark và combo
+                        học tập — thiết kế độc quyền Mèo Kem, phù hợp học sinh, sinh viên.
+
+                    </p>
+
+                </div>
+
+                <!-- SEARCH + FILTER -->
+
+                <div class="bg-gray-50 rounded-3xl border border-gray-100 p-5 sm:p-6 mb-10">
+
+                    <div class="max-w-xl mx-auto mb-5">
+
+                        <label for="product-search" class="sr-only">Tìm sản phẩm</label>
+
+                        <div class="relative">
+
+                            <input id="product-search" v-model="keyword" type="search"
+                                placeholder="Tìm sticker, sổ tay, bút, combo..."
+                                class="w-full bg-white border border-gray-200 focus:border-kem focus:ring-2 focus:ring-kem/20 rounded-2xl pl-12 pr-5 py-4 outline-none transition">
+
+                            <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1" role="tablist"
+                        aria-label="Lọc danh mục sản phẩm">
+
+                        <button @click="changeCategory('all')" type="button" role="tab" :aria-selected="category=='all'"
+                            :class="category=='all'
+                            ? 'bg-kem text-white border-kem shadow-md shadow-kem/20'
+                            : 'bg-white text-gray-700 border-gray-200 hover:border-kem-200'"
+                            class="px-5 py-2.5 rounded-full whitespace-nowrap font-semibold border transition">
+
+                            Tất cả
+
+                        </button>
+
+                        <button v-for="item in categories" :key="item.id" @click="changeCategory(item.slug)"
+                            type="button" role="tab" :aria-selected="category==item.slug" :class="category==item.slug
+                            ? 'bg-kem text-white border-kem shadow-md shadow-kem/20'
+                            : 'bg-white text-gray-700 border-gray-200 hover:border-kem-200'"
+                            class="px-5 py-2.5 rounded-full whitespace-nowrap font-semibold border transition">
+
+                            {{ item.name }}
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCTS -->
+
+                <div v-if="productsFilter.length" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <article v-for="product in productsFilter" :key="product.id" itemscope
+                        itemtype="https://schema.org/Product"
+                        class="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:border-kem-200/60 transition card-hover">
+
+                        <div class="relative overflow-hidden">
+
+                            <img :src="product.image" :alt="product.name + ' - KemStore.vn sticker đồ dùng học tập'"
+                                itemprop="image"
+                                class="w-full aspect-square object-cover group-hover:scale-105 transition duration-500"
+                                loading="lazy">
+
+                            <button @click="toggleWishlist(product)" type="button"
+                                :aria-label="product.favorite ? 'Bỏ yêu thích' : 'Thêm yêu thích'"
+                                class="absolute top-3 right-3 bg-white/95 w-10 h-10 rounded-full shadow-sm hover:scale-105 transition">
+
+                                <i
+                                    :class="product.favorite ? 'fa-solid fa-heart text-red-500' : 'fa-regular fa-heart text-gray-500'"></i>
+
+                            </button>
+
+                            <span v-if="product.discount"
+                                class="absolute left-3 top-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+
+                                -{{ product.discount }}%
+
+                            </span>
+
+                            <span
+                                class="absolute left-3 bottom-3 bg-white/95 text-gray-700 px-3 py-1 rounded-full text-xs font-bold capitalize">
+                                {{ product.category }}
+                            </span>
+
+                        </div>
+
+                        <div class="p-5">
+
+                            <h3 itemprop="name"
+                                class="font-bold text-gray-900 line-clamp-2 min-h-[3rem] group-hover:text-kem transition">
+
+                                {{ product.name }}
+
+                            </h3>
+
+                            <p itemprop="description" class="text-sm text-gray-500 mt-2 line-clamp-2">
+
+                                {{ product.description }}
+
+                            </p>
+
+                            <div itemprop="offers" itemscope itemtype="https://schema.org/Offer"
+                                class="mt-4 flex items-center gap-2 flex-wrap">
+
+                                <meta itemprop="priceCurrency" content="VND">
+                                <span itemprop="price" :content="product.price" class="text-kem font-extrabold text-xl">
+
+                                    {{ formatMoney(product.price) }}
+
+                                </span>
+
+                                <span v-if="product.oldPrice" class="line-through text-gray-400 text-sm">
+
+                                    {{ formatMoney(product.oldPrice) }}
+
+                                </span>
+
+                                <link itemprop="availability" href="https://schema.org/InStock">
+
+                            </div>
+
+                            <div class="mt-3 flex items-center gap-2">
+
+                                <div class="flex text-yellow-400 text-sm" aria-hidden="true">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+
+                                <span class="text-sm text-gray-500">
+                                    ({{ product.review }} đánh giá)
+                                </span>
+
+                            </div>
+
+                            <div class="flex gap-2 mt-5">
+
+                                <button @click="quickView(product)" type="button"
+                                    class="flex-1 border border-gray-200 rounded-xl py-3 font-semibold text-gray-700 hover:border-kem hover:text-kem transition">
+
+                                    Xem nhanh
+
+                                </button>
+
+                                <a :href="product.link" target="_blank" rel="noopener noreferrer"
+                                    class="flex-1 bg-kem hover:bg-kem-600 text-white rounded-xl py-3 text-center font-semibold transition">
+
+                                    Mua ngay
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <div v-else class="text-center py-16 bg-gray-50 rounded-3xl border border-dashed border-gray-200">
+
+                    <i class="fa-solid fa-box-open text-4xl text-gray-300"></i>
+
+                    <p class="mt-4 text-lg font-bold text-gray-700">
+                        Không tìm thấy sản phẩm phù hợp
+                    </p>
+
+                    <p class="mt-2 text-gray-500">
+                        Thử đổi từ khóa hoặc chọn danh mục khác.
+                    </p>
+
+                    <button @click="keyword=''; changeCategory('all')" type="button"
+                        class="mt-6 bg-kem hover:bg-kem-600 text-white px-6 py-3 rounded-2xl font-bold transition">
+
+                        Xem tất cả sản phẩm
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- QUICK VIEW -->
+
+        <teleport to="body">
+
+            <div v-if="productModal" @click.self="productModal=null"
+                class="vue-overlay fixed inset-0 bg-black/70 backdrop-blur-sm z-[70] flex items-center justify-center p-4"
+                role="dialog" aria-modal="true" :aria-label="'Chi tiết ' + productModal.name">
+
+                <div
+                    class="bg-white rounded-3xl max-w-5xl w-full overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+
+                    <div class="grid md:grid-cols-2">
+
+                        <div class="relative bg-gray-50">
+
+                            <img :src="productModal.image" :alt="productModal.name"
+                                class="w-full h-full min-h-[280px] object-cover">
+
+                            <span v-if="productModal.discount"
+                                class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+
+                                Giảm {{ productModal.discount }}%
+
+                            </span>
+
+                        </div>
+
+                        <div class="p-6 sm:p-8 flex flex-col">
+
+                            <div class="flex justify-between items-start gap-4">
+
+                                <div>
+
+                                    <p class="text-xs font-bold uppercase tracking-wider text-kem capitalize">
+                                        {{ productModal.category }}
+                                    </p>
+
+                                    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1">
+                                        {{ productModal.name }}
+                                    </h2>
+
+                                </div>
+
+                                <button @click="productModal=null" type="button" aria-label="Đóng"
+                                    class="w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition shrink-0">
+
+                                    <i class="fa-solid fa-xmark text-xl"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="mt-5 flex items-baseline gap-3 flex-wrap">
+
+                                <span class="text-kem text-3xl font-extrabold">
+                                    {{ formatMoney(productModal.price) }}
+                                </span>
+
+                                <span v-if="productModal.oldPrice" class="line-through text-gray-400 text-lg">
+
+                                    {{ formatMoney(productModal.oldPrice) }}
+
+                                </span>
+
+                            </div>
+
+                            <div class="mt-3 flex items-center gap-2">
+
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+
+                                <span class="text-sm text-gray-500">
+                                    {{ productModal.review }} đánh giá trên Shopee
+                                </span>
+
+                            </div>
+
+                            <p class="mt-5 text-gray-600 leading-relaxed">
+                                {{ productModal.description }}
+                            </p>
+
+                            <ul class="mt-6 space-y-3">
+
+                                <li class="flex items-center gap-3 text-gray-700 font-medium">
+                                    <span
+                                        class="w-8 h-8 rounded-lg bg-kem-50 text-kem flex items-center justify-center">
+                                        <i class="fa-solid fa-check text-sm"></i>
+                                    </span>
+                                    Chất lượng cao, in sắc nét
+                                </li>
+
+                                <li class="flex items-center gap-3 text-gray-700 font-medium">
+                                    <span
+                                        class="w-8 h-8 rounded-lg bg-kem-50 text-kem flex items-center justify-center">
+                                        <i class="fa-solid fa-check text-sm"></i>
+                                    </span>
+                                    Thiết kế độc quyền Mèo Kem
+                                </li>
+
+                                <li class="flex items-center gap-3 text-gray-700 font-medium">
+                                    <span
+                                        class="w-8 h-8 rounded-lg bg-kem-50 text-kem flex items-center justify-center">
+                                        <i class="fa-solid fa-check text-sm"></i>
+                                    </span>
+                                    Giao hàng toàn quốc qua Shopee
+                                </li>
+
+                            </ul>
+
+                            <div class="flex flex-wrap gap-3 mt-auto pt-6">
+
+                                <a :href="productModal.link" target="_blank" rel="noopener noreferrer"
+                                    class="flex-1 min-w-[140px] bg-kem hover:bg-kem-600 text-white px-6 py-4 rounded-2xl font-bold text-center transition">
+
+                                    <i class="fa-solid fa-bag-shopping mr-2"></i>
+                                    Mua trên Shopee
+
+                                </a>
+
+                                <button @click="toggleWishlist(productModal)" type="button"
+                                    class="px-6 py-4 rounded-2xl font-bold border border-gray-200 hover:border-kem hover:text-kem transition">
+
+                                    <i
+                                        :class="productModal.favorite ? 'fa-solid fa-heart text-red-500' : 'fa-regular fa-heart'"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </teleport>
+        <!-- MEO KEM SECTION -->
+
+        <section id="meokem" class="py-20 bg-gray-50" aria-labelledby="meokem-title">
+
+            <div class="max-w-7xl mx-auto px-4">
+
+                <div class="max-w-3xl mx-auto text-center mb-12">
+
+                    <p class="text-sm font-bold uppercase tracking-wider text-kem mb-3">
+                        Nhân vật thương hiệu
+                    </p>
+
+                    <h2 id="meokem-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
+
+                        Gặp gỡ Mèo Kem — linh vật đồ dùng học tập KemStore.vn
+
+                    </h2>
+
+                    <p class="text-gray-600 mt-4 text-lg leading-relaxed">
+
+                        Mèo Kem là người bạn đồng hành đáng yêu trên sticker, sổ tay và văn phòng phẩm — truyền cảm hứng
+                        học tập vui vẻ, sáng tạo mỗi ngày cho học sinh và sinh viên.
+
+                    </p>
+
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <article v-for="item in meoKemFeatures" :key="item.title"
+                        class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-kem-200/50 transition card-hover">
+
+                        <div :class="item.bg"
+                            class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-5">
+
+                            <i :class="item.icon + ' text-kem'"></i>
+
+                        </div>
+
+                        <h3 class="font-extrabold text-xl text-gray-900">
+                            {{ item.title }}
+                        </h3>
+
+                        <p class="text-gray-600 mt-2 leading-relaxed">
+                            {{ item.desc }}
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <div class="text-center mt-10">
+
+                    <a :href="socialLinks.youtube" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 bg-kem hover:bg-kem-600 text-white px-8 py-4 rounded-2xl font-bold transition shadow-lg shadow-kem/25">
+
+                        <i class="fa-brands fa-youtube"></i>
+                        Xem Mèo Kem trên YouTube
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- COMBO BUILDER -->
+
+        <section class="py-20" aria-labelledby="combo-title">
+
+            <div class="max-w-7xl mx-auto px-4">
+
+                <div class="bg-white rounded-[2rem] border border-gray-100 shadow-kem overflow-hidden">
+
+                    <div class="grid lg:grid-cols-2">
+
+                        <div class="p-8 sm:p-10 lg:p-12 gradient-kem">
+
+                            <p class="text-sm font-bold uppercase tracking-wider text-gray-700 mb-3">
+                                Gợi ý mua hàng
+                            </p>
+
+                            <h2 id="combo-title"
+                                class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">
+
+                                Tự chọn combo đồ dùng học tập theo sở thích
+
+                            </h2>
+
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+
+                                Kết hợp <strong>sticker</strong>, <strong>sổ tay</strong> và <strong>bút viết</strong>
+                                yêu thích — tiết kiệm hơn khi mua combo trên Shopee KemStore.vn.
+
+                            </p>
+
+                            <ul class="mt-6 space-y-2 text-gray-800 font-semibold">
+
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-kem"></i>
+                                    Linh hoạt theo nhu cầu
+                                </li>
+
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-kem"></i>
+                                    Phù hợp quà tặng tựu trường
+                                </li>
+
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-kem"></i>
+                                    Đặt hàng nhanh trên Shopee
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="p-8 sm:p-10 lg:p-12">
+
+                            <div class="space-y-5">
+
+                                <div>
+
+                                    <label for="combo-sticker" class="block font-bold text-gray-900 mb-2">
+                                        <i class="fa-solid fa-note-sticky text-kem mr-2"></i>
+                                        Sticker
+                                    </label>
+
+                                    <select id="combo-sticker" v-model="comboSticker"
+                                        class="w-full bg-gray-50 border border-gray-200 rounded-2xl p-4 outline-none focus:border-kem focus:ring-2 focus:ring-kem/20 transition">
+
+                                        <option>Sticker Mèo Kem</option>
+                                        <option>Sticker Công Chúa</option>
+                                        <option>Sticker Cute</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div>
+
+                                    <label for="combo-notebook" class="block font-bold text-gray-900 mb-2">
+                                        <i class="fa-solid fa-book text-kem mr-2"></i>
+                                        Sổ tay
+                                    </label>
+
+                                    <select id="combo-notebook" v-model="comboNotebook"
+                                        class="w-full bg-gray-50 border border-gray-200 rounded-2xl p-4 outline-none focus:border-kem focus:ring-2 focus:ring-kem/20 transition">
+
+                                        <option>Sổ Mini</option>
+                                        <option>Sổ Nhật Ký</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div>
+
+                                    <label for="combo-pen" class="block font-bold text-gray-900 mb-2">
+                                        <i class="fa-solid fa-pen text-kem mr-2"></i>
+                                        Bút viết
+                                    </label>
+
+                                    <select id="combo-pen" v-model="comboPen"
+                                        class="w-full bg-gray-50 border border-gray-200 rounded-2xl p-4 outline-none focus:border-kem focus:ring-2 focus:ring-kem/20 transition">
+
+                                        <option>Bút Gel</option>
+                                        <option>Bút Màu</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <div class="mt-8 p-5 bg-kem-50 rounded-2xl border border-kem-200/50">
+
+                                <p class="text-sm font-bold text-gray-500 uppercase tracking-wider">Combo của bạn</p>
+
+                                <p class="mt-2 font-extrabold text-gray-900">
+                                    {{ comboSticker }} + {{ comboNotebook }} + {{ comboPen }}
+                                </p>
+
+                            </div>
+
+                            <a :href="socialLinks.shopee" target="_blank" rel="noopener noreferrer"
+                                class="mt-6 flex items-center justify-center gap-2.5 w-full bg-kem hover:bg-kem-600 text-white px-8 py-4 rounded-2xl font-bold transition shadow-lg shadow-kem/25">
+
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                Đặt combo trên Shopee
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- YOUTUBE VIDEOS -->
+
+        <section id="videos" class="py-20 bg-white" aria-labelledby="videos-title">
+
+            <div class="max-w-7xl mx-auto px-4">
+
+                <div class="max-w-3xl mx-auto text-center mb-12">
+
+                    <p class="text-sm font-bold uppercase tracking-wider text-kem mb-3">
+                        Video Mèo Kem
+                    </p>
+
+                    <h2 id="videos-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
+
+                        Xem sticker &amp; đồ dùng học tập trên YouTube
+
+                    </h2>
+
+                    <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+
+                        Theo dõi kênh <strong>Tiệm Tạp Hóa Nhà Kem</strong> để xem unbox, gợi ý trang trí góc học tập và
+                        bộ sưu tập sticker mới mỗi tuần.
+
+                    </p>
+
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+                    <article v-for="video in youtubeVideos" :key="video.id"
+                        class="group bg-gray-50 rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:border-kem-200/50 transition">
+
+                        <div class="relative aspect-video bg-gray-900 overflow-hidden">
+
+                            <iframe :src="getYoutubeEmbed(video.id)" :title="video.title"
+                                class="absolute inset-0 w-full h-full" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                            </iframe>
+
+                        </div>
+
+                        <div class="p-5 sm:p-6">
+
+                            <h3
+                                class="font-extrabold text-lg text-gray-900 group-hover:text-kem transition leading-snug">
+                                {{ video.title }}
+                            </h3>
+
+                            <p class="mt-2 text-gray-600 text-sm leading-relaxed line-clamp-2">
+                                {{ video.description }}
+                            </p>
+
+                            <a :href="video.url" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 mt-4 text-sm font-bold text-kem hover:underline">
+
+                                <i class="fa-brands fa-youtube"></i>
+                                Xem trên YouTube
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <div class="text-center mt-12">
+
+                    <a :href="socialLinks.youtube" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2.5 bg-kem hover:bg-kem-600 text-white px-8 py-4 rounded-2xl font-bold transition shadow-lg shadow-kem/25">
+
+                        <i class="fa-brands fa-youtube text-xl"></i>
+                        Đăng ký kênh YouTube
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- VOUCHER -->
+
+        <section id="voucher" class="py-20" aria-labelledby="voucher-title">
+
+            <div class="max-w-6xl mx-auto px-4">
+
+                <div class="relative overflow-hidden rounded-[2.2rem] border border-kem-200/50 shadow-kem bg-white">
+
+                    <div class="absolute inset-0 gradient-kem opacity-95"></div>
+
+                    <div class="relative grid lg:grid-cols-2 gap-10 p-8 sm:p-10 lg:p-12 items-center">
+
+                        <div>
+
+                            <p class="text-sm font-bold uppercase tracking-wider text-gray-700 mb-3">
+                                Ưu đãi dành cho bạn
+                            </p>
+
+                            <h2 id="voucher-title"
+                                class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+
+                                Nhận voucher giảm <span class="text-kem">10%</span> cho sticker &amp; đồ dùng học tập
+
+                            </h2>
+
+                            <p class="mt-4 text-gray-700 text-lg leading-relaxed">
+                                Đăng ký để nhận mã ưu đãi và cập nhật bộ sưu tập sticker Mèo Kem mới. Thông tin được gửi
+                                về Telegram để xử lý nhanh.
+                            </p>
+
+                            <div class="mt-6 flex flex-wrap gap-3">
+                                <span
+                                    class="inline-flex items-center gap-2 bg-white/85 border border-white/70 rounded-2xl px-4 py-3 font-semibold text-gray-700 shadow-sm">
+                                    <i class="fa-solid fa-bolt text-kem"></i>
+                                    Nhận mã trong vài phút
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-2 bg-white/85 border border-white/70 rounded-2xl px-4 py-3 font-semibold text-gray-700 shadow-sm">
+                                    <i class="fa-solid fa-shield-heart text-kem"></i>
+                                    Không spam, có thể hủy
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="bg-white/85 border border-white/70 rounded-3xl p-6 sm:p-7 shadow-lg">
+
+                            <form class="space-y-4" @submit.prevent="submitVoucherForm">
+
+                                <div class="grid sm:grid-cols-2 gap-4">
+
+                                    <div>
+                                        <label for="voucher-name" class="block text-sm font-bold text-gray-900 mb-2">Họ
+                                            tên</label>
+                                        <input id="voucher-name" v-model.trim="voucherForm.name" type="text"
+                                            autocomplete="name" placeholder="VD: Ngọc Anh"
+                                            class="w-full bg-white border border-gray-200 focus:border-kem focus:ring-2 focus:ring-kem/20 rounded-2xl p-4 outline-none transition">
+                                    </div>
+
+                                    <div>
+                                        <label for="voucher-phone" class="block text-sm font-bold text-gray-900 mb-2">Số
+                                            điện thoại</label>
+                                        <input id="voucher-phone" v-model.trim="voucherForm.phone" type="tel"
+                                            inputmode="tel" autocomplete="tel" placeholder="VD: 09xx xxx xxx"
+                                            class="w-full bg-white border border-gray-200 focus:border-kem focus:ring-2 focus:ring-kem/20 rounded-2xl p-4 outline-none transition">
+                                    </div>
+
+                                </div>
+
+                                <div>
+                                    <label for="voucher-email"
+                                        class="block text-sm font-bold text-gray-900 mb-2">Email</label>
+                                    <input id="voucher-email" v-model.trim="voucherForm.email" type="email"
+                                        autocomplete="email" placeholder="VD: ban@gmail.com"
+                                        class="w-full bg-white border border-gray-200 focus:border-kem focus:ring-2 focus:ring-kem/20 rounded-2xl p-4 outline-none transition">
+                                </div>
+
+                                <button type="submit" :disabled="voucherFormSubmitting"
+                                    class="w-full bg-kem hover:bg-kem-600 disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-2xl font-extrabold transition shadow-lg shadow-kem/25">
+
+                                    <span v-if="!voucherFormSubmitting">Nhận voucher</span>
+                                    <span v-else>Đang gửi...</span>
+
+                                </button>
+
+                                <p class="text-xs text-gray-600 leading-relaxed">
+                                    Bằng việc đăng ký, bạn đồng ý nhận thông tin ưu đãi từ KemStore.vn.
+                                </p>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT -->
+
+        <section id="contact" class="py-20 bg-white" aria-labelledby="contact-title">
+
+            <div class="max-w-7xl mx-auto px-4">
+
+                <div class="grid lg:grid-cols-2 gap-10 items-start">
+
+                    <div class="max-w-xl">
+
+                        <p class="text-sm font-bold uppercase tracking-wider text-kem mb-3">
+                            Liên hệ nhanh
+                        </p>
+
+                        <h2 id="contact-title"
+                            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+                            Tư vấn miễn phí về sticker &amp; văn phòng phẩm
+                        </h2>
+
+                        <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                            Bạn cần tư vấn chọn sticker, combo tựu trường hoặc đặt số lượng lớn? Gửi thông tin để
+                            KemStore.vn hỗ trợ nhanh qua Telegram.
+                        </p>
+
+                        <div class="mt-6 space-y-3">
+
+                            <a :href="socialLinks.facebook" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-2xl p-4 hover:border-kem-200/60 hover:bg-kem-50 transition">
+                                <span
+                                    class="w-11 h-11 rounded-2xl bg-white border border-gray-200 text-kem flex items-center justify-center">
+                                    <i class="fa-brands fa-facebook text-lg"></i>
+                                </span>
+                                <div class="flex-1">
+                                    <p class="font-extrabold text-gray-900 leading-tight">Facebook Page</p>
+                                    <p class="text-sm text-gray-600">Tiệm Tạp Hóa Nhà Kem</p>
+                                </div>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-gray-300"></i>
+                            </a>
+
+                            <a :href="socialLinks.youtube" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-2xl p-4 hover:border-kem-200/60 hover:bg-kem-50 transition">
+                                <span
+                                    class="w-11 h-11 rounded-2xl bg-white border border-gray-200 text-kem flex items-center justify-center">
+                                    <i class="fa-brands fa-youtube text-lg"></i>
+                                </span>
+                                <div class="flex-1">
+                                    <p class="font-extrabold text-gray-900 leading-tight">YouTube</p>
+                                    <p class="text-sm text-gray-600">Video unbox &amp; hướng dẫn trang trí</p>
+                                </div>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-gray-300"></i>
+                            </a>
+
+                            <a :href="socialLinks.shopee" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-2xl p-4 hover:border-kem-200/60 hover:bg-kem-50 transition">
+                                <span
+                                    class="w-11 h-11 rounded-2xl bg-white border border-gray-200 text-kem flex items-center justify-center">
+                                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                                </span>
+                                <div class="flex-1">
+                                    <p class="font-extrabold text-gray-900 leading-tight">Shopee</p>
+                                    <p class="text-sm text-gray-600">Đặt hàng nhanh, theo dõi đơn</p>
+                                </div>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-gray-300"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-100 rounded-[2rem] p-6 sm:p-8 shadow-sm">
+
+                        <form class="grid sm:grid-cols-2 gap-4" @submit.prevent="submitContactForm">
+
+                            <div>
+                                <label for="contact-name" class="block text-sm font-bold text-gray-900 mb-2">Họ
+                                    tên</label>
+                                <input id="contact-name" v-model.trim="contactForm.name" type="text" autocomplete="name"
+                                    placeholder="VD: Minh Anh"
+                                    class="w-full bg-white border border-gray-200 focus:border-kem focus:ring-2 focus:ring-kem/20 rounded-2xl p-4 outline-none transition">
+                            </div>
+
+                            <div>
+                                <label for="contact-phone" class="block text-sm font-bold text-gray-900 mb-2">Số điện
+                                    thoại</label>
+                                <input id="contact-phone" v-model.trim="contactForm.phone" type="tel" inputmode="tel"
+                                    autocomplete="tel" placeholder="VD: 09xx xxx xxx"
+                                    class="w-full bg-white border border-gray-200 focus:border-kem focus:ring-2 focus:ring-kem/20 rounded-2xl p-4 outline-none transition">
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="contact-email"
+                                    class="block text-sm font-bold text-gray-900 mb-2">Email</label>
+                                <input id="contact-email" v-model.trim="contactForm.email" type="email"
+                                    autocomplete="email" placeholder="VD: ban@gmail.com"
+                                    class="w-full bg-white border border-gray-200 focus:border-kem focus:ring-2 focus:ring-kem/20 rounded-2xl p-4 outline-none transition">
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="contact-message" class="block text-sm font-bold text-gray-900 mb-2">Nội dung
+                                    tư vấn</label>
+                                <textarea id="contact-message" v-model.trim="contactForm.message" rows="5"
+                                    placeholder="Bạn cần tư vấn sticker, combo, đặt số lượng lớn..."
+                                    class="w-full bg-white border border-gray-200 focus:border-kem focus:ring-2 focus:ring-kem/20 rounded-2xl p-4 outline-none transition"></textarea>
+                            </div>
+
+                            <button type="submit" :disabled="contactFormSubmitting"
+                                class="sm:col-span-2 bg-kem hover:bg-kem-600 disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-2xl font-extrabold transition shadow-lg shadow-kem/25">
+
+                                <span v-if="!contactFormSubmitting">Gửi yêu cầu tư vấn</span>
+                                <span v-else>Đang gửi...</span>
+
+                            </button>
+
+                            <p class="sm:col-span-2 text-xs text-gray-600 leading-relaxed">
+                                Gửi xong, KemStore.vn sẽ liên hệ sớm nhất (trong giờ làm việc).
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- BLOG SEO -->
+
+        <section id="blog" class="py-20 bg-gray-50" aria-labelledby="blog-title">
+
+            <div class="max-w-7xl mx-auto px-4">
+
+                <div class="max-w-3xl mx-auto text-center mb-12">
+
+                    <p class="text-sm font-bold uppercase tracking-wider text-kem mb-3">
+                        Góc chia sẻ
+                    </p>
+
+                    <h2 id="blog-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
+
+                        Kiến thức học tập &amp; sticker cho học sinh
+
+                    </h2>
+
+                    <p class="text-gray-600 mt-4 text-lg leading-relaxed">
+                        Mẹo trang trí góc học tập, checklist đồ dùng tựu trường và gợi ý sticker cute dễ phối.
+                    </p>
+
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+
+                    <article v-for="post in blogs" :key="post.id"
+                        class="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:border-kem-200/50 transition">
+
+                        <div class="relative">
+
+                            <img :src="post.image" :alt="post.title" class="w-full h-56 object-cover" loading="lazy">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent opacity-0 group-hover:opacity-100 transition">
+                            </div>
+
+                        </div>
+
+                        <div class="p-6">
+
+                            <h3
+                                class="font-extrabold text-xl text-gray-900 leading-snug group-hover:text-kem transition">
+                                {{ post.title }}
+                            </h3>
+
+                            <p class="text-gray-600 mt-3 leading-relaxed line-clamp-3">
+                                {{ post.description }}
+                            </p>
+
+                            <a :href="post.link"
+                                class="inline-flex items-center gap-2 mt-5 text-kem font-bold hover:underline">
+                                Xem thêm
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FAQ -->
+
+        <section class="py-20 bg-white" aria-labelledby="faq-title">
+
+            <div class="max-w-5xl mx-auto px-4">
+
+                <div class="text-center mb-10">
+                    <p class="text-sm font-bold uppercase tracking-wider text-kem mb-3">
+                        Hỏi đáp nhanh
+                    </p>
+                    <h2 id="faq-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
+                        Câu hỏi thường gặp
+                    </h2>
+                </div>
+
+                <div class="space-y-4">
+
+                    <details class="group bg-gray-50 border border-gray-100 rounded-2xl p-5">
+                        <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
+                            <span class="font-extrabold text-gray-900">KemStore có giao hàng toàn quốc không?</span>
+                            <span
+                                class="w-10 h-10 rounded-xl bg-white border border-gray-200 text-kem flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-plus group-open:hidden"></i>
+                                <i class="fa-solid fa-minus hidden group-open:block"></i>
+                            </span>
+                        </summary>
+                        <p class="mt-3 text-gray-600 leading-relaxed">
+                            Có, KemStore giao hàng toàn quốc qua Shopee và các đơn vị vận chuyển đối tác.
+                        </p>
+                    </details>
+
+                    <details class="group bg-gray-50 border border-gray-100 rounded-2xl p-5">
+                        <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
+                            <span class="font-extrabold text-gray-900">Có thể đặt số lượng lớn không?</span>
+                            <span
+                                class="w-10 h-10 rounded-xl bg-white border border-gray-200 text-kem flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-plus group-open:hidden"></i>
+                                <i class="fa-solid fa-minus hidden group-open:block"></i>
+                            </span>
+                        </summary>
+                        <p class="mt-3 text-gray-600 leading-relaxed">
+                            Có. KemStore hỗ trợ đặt số lượng lớn cho trường học, lớp học và đại lý. Bạn hãy gửi form tư
+                            vấn ở trên để được báo giá nhanh.
+                        </p>
+                    </details>
+
+                    <details class="group bg-gray-50 border border-gray-100 rounded-2xl p-5">
+                        <summary class="list-none cursor-pointer flex items-center justify-between gap-4">
+                            <span class="font-extrabold text-gray-900">Có thiết kế sticker theo yêu cầu không?</span>
+                            <span
+                                class="w-10 h-10 rounded-xl bg-white border border-gray-200 text-kem flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-plus group-open:hidden"></i>
+                                <i class="fa-solid fa-minus hidden group-open:block"></i>
+                            </span>
+                        </summary>
+                        <p class="mt-3 text-gray-600 leading-relaxed">
+                            Có hỗ trợ thiết kế theo yêu cầu (tùy số lượng). Vui lòng để lại nội dung ở form tư vấn để
+                            KemStore phản hồi chi tiết.
+                        </p>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer class="bg-gray-950 text-white" itemscope itemtype="https://schema.org/Organization"
+            aria-label="Chân trang KemStore.vn">
+
+            <meta itemprop="name" content="KemStore.vn">
+            <link itemprop="url" href="https://kemstore.vn">
+            <link itemprop="logo" href="https://kemstore.vn/assets/images/logo.jpg">
+
+            <div class="border-t border-kem/30 bg-gradient-to-r from-kem/20 via-transparent to-kem/10">
+
+                <div class="max-w-7xl mx-auto px-4 py-10">
+
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+
+                        <div class="max-w-xl">
+
+                            <p class="text-sm font-bold uppercase tracking-wider text-kem-400 mb-2">
+                                Ưu đãi độc quyền
+                            </p>
+
+                            <p class="text-2xl sm:text-3xl font-extrabold leading-tight">
+                                Nhận voucher <span class="text-kem">10%</span> cho đơn sticker &amp; văn phòng phẩm
+                            </p>
+
+                            <p class="mt-2 text-gray-400 leading-relaxed">
+                                Đăng ký nhanh để cập nhật bộ sưu tập Mèo Kem mới và săn deal trên Shopee.
+                            </p>
+
+                        </div>
+
+                        <a href="#voucher"
+                            class="inline-flex items-center justify-center gap-2 bg-kem hover:bg-kem-600 text-white px-8 py-4 rounded-2xl font-bold transition shadow-lg shadow-kem/25 shrink-0">
+
+                            <i class="fa-solid fa-gift"></i>
+                            Nhận voucher ngay
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 py-14">
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+
+                    <div class="sm:col-span-2 lg:col-span-5">
+
+                        <a href="#home" class="inline-flex items-center gap-3 group">
+
+                            <img src="./assets/images/logo.jpg" alt="Logo KemStore.vn - Tiệm Tạp Hóa Nhà Kem"
+                                itemprop="logo"
+                                class="w-14 h-14 rounded-2xl object-cover border-2 border-gray-800 group-hover:border-kem/50 transition"
+                                loading="lazy">
+
+                            <div>
+
+                                <p class="text-2xl font-extrabold text-white group-hover:text-kem transition">
+                                    KemStore.vn
+                                </p>
+
+                                <p class="text-sm text-gray-400">
+                                    Tiệm Tạp Hóa Nhà Kem
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <p class="mt-5 text-gray-400 leading-relaxed max-w-md" itemprop="description">
+
+                            Chuyên <strong class="text-gray-300">sticker cute</strong>, <strong class="text-gray-300">đồ
+                                dùng học tập</strong> và <strong class="text-gray-300">văn phòng phẩm</strong> thiết kế
+                            độc quyền Mèo Kem — phù hợp học sinh, sinh viên và người yêu phụ kiện dễ thương.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mt-6">
+
+                            <a :href="socialLinks.facebook" target="_blank" rel="noopener noreferrer me"
+                                class="w-11 h-11 rounded-2xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-kem hover:border-kem/40 flex items-center justify-center transition"
+                                aria-label="Facebook Tiệm Tạp Hóa Nhà Kem" title="Facebook">
+                                <i class="fa-brands fa-facebook text-lg"></i>
+                            </a>
+
+                            <a :href="socialLinks.tiktok" target="_blank" rel="noopener noreferrer me"
+                                class="w-11 h-11 rounded-2xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-kem hover:border-kem/40 flex items-center justify-center transition"
+                                aria-label="TikTok Mèo Kem" title="TikTok">
+                                <i class="fa-brands fa-tiktok text-lg"></i>
+                            </a>
+
+                            <a :href="socialLinks.youtube" target="_blank" rel="noopener noreferrer me"
+                                class="w-11 h-11 rounded-2xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-kem hover:border-kem/40 flex items-center justify-center transition"
+                                aria-label="YouTube Tiệm Tạp Hóa Nhà Kem" title="YouTube">
+                                <i class="fa-brands fa-youtube text-lg"></i>
+                            </a>
+
+                            <a :href="socialLinks.shopee" target="_blank" rel="noopener noreferrer"
+                                class="w-11 h-11 rounded-2xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-kem hover:border-kem/40 flex items-center justify-center transition"
+                                aria-label="Shopee KemStore" title="Shopee">
+                                <i class="fa-solid fa-bag-shopping text-lg"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <nav class="lg:col-span-2" aria-label="Danh mục sản phẩm">
+
+                        <h2 class="text-sm font-bold uppercase tracking-wider text-gray-300 mb-4">
+                            Sản phẩm
+                        </h2>
+
+                        <ul class="space-y-3 text-gray-400">
+
+                            <li>
+                                <a href="#products" @click="changeCategory('sticker')"
+                                    class="hover:text-kem transition inline-flex items-center gap-2">
+                                    <i class="fa-solid fa-chevron-right text-[10px] text-kem"></i>
+                                    Sticker Mèo Kem
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#products" @click="changeCategory('notebook')"
+                                    class="hover:text-kem transition inline-flex items-center gap-2">
+                                    <i class="fa-solid fa-chevron-right text-[10px] text-kem"></i>
+                                    Sổ tay học tập
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#products" @click="changeCategory('pen')"
+                                    class="hover:text-kem transition inline-flex items-center gap-2">
+                                    <i class="fa-solid fa-chevron-right text-[10px] text-kem"></i>
+                                    Bút viết
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#products" @click="changeCategory('bookmark')"
+                                    class="hover:text-kem transition inline-flex items-center gap-2">
+                                    <i class="fa-solid fa-chevron-right text-[10px] text-kem"></i>
+                                    Bookmark
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#products" @click="changeCategory('combo')"
+                                    class="hover:text-kem transition inline-flex items-center gap-2">
+                                    <i class="fa-solid fa-chevron-right text-[10px] text-kem"></i>
+                                    Combo tựu trường
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                    <nav class="lg:col-span-2" aria-label="Điều hướng trang">
+
+                        <h2 class="text-sm font-bold uppercase tracking-wider text-gray-300 mb-4">
+                            Khám phá
+                        </h2>
+
+                        <ul class="space-y-3 text-gray-400">
+
+                            <li v-for="item in footerNavLinks" :key="item.href">
+
+                                <a :href="item.href" class="hover:text-kem transition inline-flex items-center gap-2">
+
+                                    <i class="fa-solid fa-chevron-right text-[10px] text-kem"></i>
+                                    {{ item.label }}
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                    <div class="lg:col-span-3">
+
+                        <h2 class="text-sm font-bold uppercase tracking-wider text-gray-300 mb-4">
+                            Liên hệ
+                        </h2>
+
+                        <ul class="space-y-4 text-gray-400">
+
+                            <li class="flex items-start gap-3">
+
+                                <span
+                                    class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 text-kem flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-globe"></i>
+                                </span>
+
+                                <div>
+                                    <p class="text-sm font-bold text-gray-300">Website</p>
+                                    <a href="https://kemstore.vn" itemprop="url" class="hover:text-kem transition">
+                                        kemstore.vn
+                                    </a>
+                                </div>
+
+                            </li>
+
+                            <li class="flex items-start gap-3">
+
+                                <span
+                                    class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 text-kem flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+
+                                <div>
+                                    <p class="text-sm font-bold text-gray-300">Email</p>
+                                    <a href="mailto:contact@kemstore.vn" itemprop="email"
+                                        class="hover:text-kem transition">
+                                        contact@kemstore.vn
+                                    </a>
+                                </div>
+
+                            </li>
+
+                            <li class="flex items-start gap-3">
+
+                                <span
+                                    class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 text-kem flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </span>
+
+                                <div>
+                                    <p class="text-sm font-bold text-gray-300">Mua hàng</p>
+                                    <a :href="socialLinks.shopee" target="_blank" rel="noopener noreferrer"
+                                        class="hover:text-kem transition">
+                                        Shopee: tiemtaphoanhakemm
+                                    </a>
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-gray-500">
+
+                    <p>
+                        © 2026 <span itemprop="legalName">KemStore.vn</span> — Tiệm Tạp Hóa Nhà Kem. Bản quyền thuộc về
+                        KemStore.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+
+                        <a href="#home" class="hover:text-kem transition">Trang chủ</a>
+                        <a href="#products" class="hover:text-kem transition">Sản phẩm</a>
+                        <a href="#contact" class="hover:text-kem transition">Liên hệ</a>
+                        <a href="#voucher" class="hover:text-kem transition">Voucher</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <!-- POPUP -->
+
+        <teleport to="body">
+
+            <Transition name="mobile-drawer">
+
+                <div v-if="showPopup" @click.self="closePopup"
+                    class="vue-overlay fixed inset-0 bg-black/70 backdrop-blur-sm z-[999] flex items-center justify-center p-4"
+                    role="dialog" aria-modal="true" aria-label="Đăng ký nhận voucher">
+
+                    <div class="relative bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl">
+
+                        <button @click="closePopup" type="button" aria-label="Đóng"
+                            class="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 transition">
+
+                            <i class="fa-solid fa-xmark"></i>
+
+                        </button>
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-kem-50 text-kem flex items-center justify-center mx-auto text-2xl">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-5">
+                            Nhận voucher giảm 10%
+                        </h2>
+
+                        <p class="mt-3 text-gray-600 leading-relaxed">
+                            Đăng ký email để nhận mã ưu đãi từ Mèo Kem — chỉ hiện khi bạn quan tâm nội dung trang.
+                        </p>
+
+                        <input v-model="popupEmail" type="email" placeholder="Nhập email của bạn"
+                            class="w-full border border-gray-200 focus:border-kem focus:ring-2 focus:ring-kem/20 rounded-xl p-4 mt-5 outline-none transition">
+
+                        <button @click="submitPopup" type="button"
+                            class="w-full mt-4 bg-kem hover:bg-kem-600 text-white py-4 rounded-xl font-bold transition">
+
+                            Nhận voucher ngay
+
+                        </button>
+
+                        <button @click="closePopup" type="button"
+                            class="mt-4 text-sm text-gray-500 hover:text-gray-700 transition">
+
+                            Không, cảm ơn — không hiện lại trong 7 ngày
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </Transition>
+
+        </teleport>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js" defer></script>
+
+    <script defer>
+
+        function initKemStoreApp() {
+
+            if (!window.Vue) return;
+
+            const { createApp } = Vue;
+
+            createApp({
+
+                data() {
+
+                    return {
+
+                        showPopup: false,
+                        popupEmail: '',
+
+                        voucherForm: {
+                            name: '',
+                            phone: '',
+                            email: ''
+                        },
+
+                        voucherFormSubmitting: false,
+
+                        contactForm: {
+                            name: '',
+                            phone: '',
+                            email: '',
+                            message: ''
+                        },
+
+                        contactFormSubmitting: false,
+
+                        telegram: {
+                            botToken: '7494446429:AAHTn5fYI0EyxbuUj0HNfOY0Ijy1zYSWM1Q',
+                            chatId: '-1002187943904'
+                        },
+
+                        showMobileMenu: false,
+
+                        keyword: '',
+
+                        category: 'all',
+
+                        productModal: null,
+
+                        socialLinks: {
+                            facebook: 'https://www.facebook.com/tiemtaphoanhakem01',
+                            youtube: 'https://www.youtube.com/@tiemtaphoanhakem',
+                            tiktok: 'https://www.tiktok.com/@tiemtaphoanhakem_01',
+                            shopee: 'https://shopee.vn/tiemtaphoanhakemm'
+                        },
+
+                        schoolBenefits: [
+                            { text: 'Combo tiết kiệm hơn mua lẻ', icon: 'fa-solid fa-tags' },
+                            { text: 'Sticker Mèo Kem thiết kế độc quyền', icon: 'fa-solid fa-wand-magic-sparkles' },
+                            { text: 'Giao hàng nhanh toàn quốc qua Shopee', icon: 'fa-solid fa-truck-fast' }
+                        ],
+
+                        meoKemFeatures: [
+                            { title: 'Học bài mỗi ngày', desc: 'Đồng hành cùng bạn trong giờ học, ghi chép và ôn bài hiệu quả.', icon: 'fa-solid fa-book-open', bg: 'bg-kem-50' },
+                            { title: 'Sáng tạo & trang trí', desc: 'Sticker và phụ kiện giúp góc học tập thêm xinh, thêm hứng khởi.', icon: 'fa-solid fa-palette', bg: 'bg-yellow-50' },
+                            { title: 'Đọc sách & khám phá', desc: 'Bookmark, sổ tay ghi chép những điều hay ho mỗi ngày.', icon: 'fa-solid fa-bookmark', bg: 'bg-blue-50' },
+                            { title: 'Nghỉ ngơi đầy năng lượng', desc: 'Mèo Kem nhắc bạn cân bằng học tập và thư giãn.', icon: 'fa-solid fa-moon', bg: 'bg-green-50' }
+                        ],
+
+                        comboSticker: 'Sticker Mèo Kem',
+                        comboNotebook: 'Sổ Mini',
+                        comboPen: 'Bút Gel',
+
+                        mobileNavItems: [
+                            { href: '#home', label: 'Trang chủ', icon: 'fa-solid fa-house' },
+                            { href: '#products', label: 'Sản phẩm', icon: 'fa-solid fa-store' },
+                            { href: '#meokem', label: 'Mèo Kem', icon: 'fa-solid fa-cat' },
+                            { href: '#blog', label: 'Blog', icon: 'fa-solid fa-pen-nib' },
+                            { href: '#voucher', label: 'Nhận voucher', icon: 'fa-solid fa-gift' },
+                            { href: '#contact', label: 'Liên hệ', icon: 'fa-solid fa-envelope' }
+                        ],
+
+                        footerNavLinks: [
+                            { href: '#home', label: 'Trang chủ' },
+                            { href: '#products', label: 'Sản phẩm nổi bật' },
+                            { href: '#videos', label: 'Video YouTube' },
+                            { href: '#meokem', label: 'Nhân vật Mèo Kem' },
+                            { href: '#blog', label: 'Góc chia sẻ' },
+                            { href: '#voucher', label: 'Nhận voucher 10%' },
+                            { href: '#contact', label: 'Tư vấn miễn phí' }
+                        ],
+
+                        categories: [
+
+                            {
+                                id: 1,
+                                name: 'Sticker',
+                                slug: 'sticker'
+                            },
+
+                            {
+                                id: 2,
+                                name: 'Sổ tay',
+                                slug: 'notebook'
+                            },
+
+                            {
+                                id: 3,
+                                name: 'Bút',
+                                slug: 'pen'
+                            },
+
+                            {
+                                id: 4,
+                                name: 'Combo',
+                                slug: 'combo'
+                            },
+
+                            {
+                                id: 5,
+                                name: 'Bookmark',
+                                slug: 'bookmark'
+                            }
+
+                        ],
+
+                        products: [
+
+                            {
+                                id: 1,
+                                name: 'Sticker Mèo Kem',
+                                price: 19000,
+                                oldPrice: 29000,
+                                discount: 35,
+                                review: 125,
+                                category: 'sticker',
+                                favorite: false,
+                                image: './assets/images/logo.jpg',
+                                description: 'Sticker Mèo Kem siêu dễ thương, in sắc nét, dán laptop, sổ tay, bình nước — thiết kế độc quyền KemStore.vn',
+                                link: 'https://shopee.vn/tiemtaphoanhakemm'
+                            },
+
+                            {
+                                id: 2,
+                                name: 'Sổ Tay Mèo Kem',
+                                price: 49000,
+                                review: 56,
+                                category: 'notebook',
+                                favorite: false,
+                                image: './assets/images/logo.jpg',
+                                description: 'Sổ tay học tập Mèo Kem, giấy dày, bìa cứng — phù hợp ghi chép và trang trí góc học tập',
+                                link: 'https://shopee.vn/tiemtaphoanhakemm'
+                            },
+
+                            {
+                                id: 3,
+                                name: 'Combo Học Tập',
+                                price: 99000,
+                                review: 89,
+                                category: 'combo',
+                                favorite: false,
+                                image: './assets/images/logo.jpg',
+                                description: 'Combo học tập tiết kiệm gồm sticker, sổ tay, bút — quà tặng tựu trường ý nghĩa',
+                                link: 'https://shopee.vn/tiemtaphoanhakemm'
+                            }
+
+                        ],
+
+                        youtubeVideos: [
+                            {
+                                id: 'wG9SowaP-Sg',
+                                title: 'Video Mèo Kem - Sticker & đồ dùng học tập',
+                                description: 'Khám phá bộ sưu tập sticker và văn phòng phẩm dễ thương từ KemStore.vn.',
+                                url: 'https://youtu.be/wG9SowaP-Sg'
+                            },
+                            {
+                                id: 'fmLY5IvPMck',
+                                title: 'Unbox đồ dùng học tập Mèo Kem',
+                                description: 'Xem chi tiết sản phẩm sticker, sổ tay và phụ kiện trang trí góc học tập.',
+                                url: 'https://youtu.be/fmLY5IvPMck'
+                            },
+                            {
+                                id: 'bGTsRtBtyuM',
+                                title: 'Gợi ý combo quà tặng tựu trường',
+                                description: 'Gợi ý combo học tập tiết kiệm, phù hợp làm quà cho học sinh.',
+                                url: 'https://youtu.be/bGTsRtBtyuM'
+                            }
+                        ],
+
+                        blogs: [
+
+                            {
+                                id: 1,
+                                title: 'Top Sticker Cute Cho Học Sinh',
+                                description: 'Gợi ý sticker cute dễ phối góc học tập: sticker Mèo Kem, theo chủ đề, theo màu và theo dịp.',
+                                image: './assets/images/blog/top-sticker-cute-cover.jpg',
+                                link: './blog/top-sticker-cute-cho-hoc-sinh.html'
+                            },
+
+                            {
+                                id: 2,
+                                title: 'Cách Trang Trí Góc Học Tập',
+                                description: 'Checklist và ý tưởng trang trí góc học tập đẹp: sticker, note, bút, sổ tay và phụ kiện.',
+                                image: './assets/images/blog/trang-tri-goc-hoc-tap-cover.jpg',
+                                link: './blog/cach-trang-tri-goc-hoc-tap.html'
+                            },
+
+                            {
+                                id: 3,
+                                title: 'Checklist Đồ Dùng Tựu Trường',
+                                description: 'Danh sách đồ dùng tựu trường cho học sinh: sổ tay, bút, sticker, bookmark, phụ kiện kèm mẹo chọn.',
+                                image: './assets/images/blog/checklist-tuu-truong-cover.jpg',
+                                link: './blog/checklist-do-dung-tuu-truong.html'
+                            }
+
+                        ]
+
+                    }
+
+                },
+
+                computed: {
+
+                    productsFilter() {
+
+                        return this.products.filter(item => {
+
+                            const checkKeyword =
+                                item.name.toLowerCase()
+                                    .includes(this.keyword.toLowerCase());
+
+                            const checkCategory =
+                                this.category == 'all'
+                                ||
+                                item.category == this.category;
+
+                            return checkKeyword && checkCategory;
+
+                        });
+
+                    }
+
+                },
+
+                watch: {
+
+                    showMobileMenu(open) {
+
+                        document.body.style.overflow = open ? 'hidden' : '';
+
+                    }
+
+                },
+
+                methods: {
+
+                    closeMobileMenu() {
+
+                        this.showMobileMenu = false;
+
+                    },
+
+                    changeCategory(category) {
+
+                        this.category = category;
+
+                    },
+
+                    quickView(product) {
+
+                        this.productModal = product;
+
+                    },
+
+                    formatMoney(value) {
+
+                        return new Intl.NumberFormat('vi-VN').format(value) + 'đ';
+
+                    },
+
+                    getYoutubeEmbed(videoId) {
+
+                        return 'https://www.youtube-nocookie.com/embed/' + videoId + '?rel=0';
+
+                    },
+
+                    injectYoutubeSchema() {
+
+                        if (document.getElementById('youtube-video-schema')) return;
+
+                        const schema = {
+                            '@context': 'https://schema.org',
+                            '@type': 'ItemList',
+                            name: 'Video Mèo Kem - KemStore.vn',
+                            itemListElement: this.youtubeVideos.map((video, index) => ({
+                                '@type': 'ListItem',
+                                position: index + 1,
+                                item: {
+                                    '@type': 'VideoObject',
+                                    name: video.title,
+                                    description: video.description,
+                                    embedUrl: 'https://www.youtube.com/embed/' + video.id,
+                                    contentUrl: video.url,
+                                    thumbnailUrl: 'https://img.youtube.com/vi/' + video.id + '/hqdefault.jpg',
+                                    publisher: {
+                                        '@type': 'Organization',
+                                        name: 'KemStore.vn',
+                                        url: 'https://kemstore.vn'
+                                    }
+                                }
+                            }))
+                        };
+
+                        const el = document.createElement('script');
+
+                        el.type = 'application/ld+json';
+
+                        el.id = 'youtube-video-schema';
+
+                        el.textContent = JSON.stringify(schema);
+
+                        document.head.appendChild(el);
+
+                    },
+
+                    detectDevice() {
+
+                        try {
+
+                            const userAgent = window.navigator.userAgent;
+                            const platform = window.navigator.platform;
+                            const macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
+                            const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
+                            const iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+                            let os = null;
+
+                            if (macosPlatforms.indexOf(platform) !== -1) { os = 'Mac OS'; }
+                            else if (iosPlatforms.indexOf(platform) !== -1) { os = 'iOS'; }
+                            else if (windowsPlatforms.indexOf(platform) !== -1) { os = 'Windows'; }
+                            else if (/Android/.test(userAgent)) { os = 'Android'; }
+                            else if (!os && /Linux/.test(platform)) { os = 'Linux'; }
+
+                            return os || 'Unknown';
+
+                        } catch (error) {
+
+                            return 'Lỗi check thiết bị';
+
+                        }
+
+                    },
+
+                    getTelegramDateFormat() {
+
+                        const date = new Date();
+
+                        return `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`;
+
+                    },
+
+                    sendTelegramMessage(text) {
+
+                        // CẢNH BÁO: Việc để bot token lộ ở client side JS sẽ có rủi ro bảo mật.
+                        // Nếu dự án lớn mạnh hơn, bạn nên chuyển phần này qua 1 API trung gian ở Backend.
+                        const botToken = this.telegram.botToken;
+                        const chatId = this.telegram.chatId;
+                        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+                        const post = () => axios.post(url, {
+                            chat_id: chatId,
+                            text: text
+                        }).then((response) => {
+
+                            if (!response.data || !response.data.ok) {
+
+                                const err = new Error(response.data?.description || 'Telegram API error');
+
+                                err.telegram = response.data;
+
+                                throw err;
+
+                            }
+
+                            return response.data;
+
+                        }).catch((error) => {
+
+                            const detail = error.response?.data?.description || error.message;
+
+                            console.error('Telegram error:', detail, error.response?.data || error);
+
+                            throw new Error(detail);
+
+                        });
+
+                        if (window.axios) return post();
+
+                        return new Promise((resolve, reject) => {
+
+                            const s = document.createElement('script');
+
+                            s.src = 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js';
+
+                            s.async = true;
+
+                            s.onload = () => post().then(resolve).catch(reject);
+
+                            s.onerror = () => reject(new Error('Không tải được Axios'));
+
+                            document.head.appendChild(s);
+
+                        });
+
+                    },
+
+                    logTelegram() {
+
+                        const message =
+                            `🔔 Truy cập KemStore.vn từ: ${this.detectDevice()}\n` +
+                            `⏰ Lúc: ${this.getTelegramDateFormat()}`;
+
+                        this.sendTelegramMessage(message)
+                            .catch((error) => console.error('Error logging:', error));
+
+                    },
+
+                    async submitVoucherForm() {
+
+                        if (this.voucherFormSubmitting) return;
+
+                        if (!this.voucherForm.email && !this.voucherForm.phone) {
+
+                            alert('Vui lòng nhập Email hoặc Số điện thoại để nhận voucher.');
+
+                            return;
+
+                        }
+
+                        this.voucherFormSubmitting = true;
+
+                        try {
+
+                            const dateformat = this.getTelegramDateFormat();
+
+                            const message =
+                                `🎁 Nhận voucher 10% (KemStore.vn)\n` +
+                                `👤 Họ tên: ${this.voucherForm.name || '-'}\n` +
+                                `📞 SĐT: ${this.voucherForm.phone || '-'}\n` +
+                                `📧 Email: ${this.voucherForm.email || '-'}\n` +
+                                `🔔 Thiết bị: ${this.detectDevice()}\n` +
+                                `⏰ Lúc: ${dateformat}`;
+
+                            await this.sendTelegramMessage(message);
+
+                            localStorage.setItem('kemstore_voucher_subscribed', '1');
+
+                            alert('Đã gửi yêu cầu! KemStore sẽ gửi mã voucher sớm nhất.');
+
+                            this.voucherForm = { name: '', phone: '', email: '' };
+
+                        } catch (e) {
+
+                            console.error(e);
+                            alert('Gửi không thành công: ' + (e.message || 'Vui lòng thử lại sau.'));
+
+                        } finally {
+
+                            this.voucherFormSubmitting = false;
+
+                        }
+
+                    },
+
+                    async submitContactForm() {
+
+                        if (this.contactFormSubmitting) return;
+
+                        if (!this.contactForm.name || (!this.contactForm.phone && !this.contactForm.email) || !this.contactForm.message) {
+
+                            alert('Vui lòng nhập Họ tên, Email/SĐT và nội dung tư vấn.');
+
+                            return;
+
+                        }
+
+                        this.contactFormSubmitting = true;
+
+                        try {
+
+                            const dateformat = this.getTelegramDateFormat();
+
+                            const message =
+                                `💬 Yêu cầu tư vấn (KemStore.vn)\n` +
+                                `👤 Họ tên: ${this.contactForm.name}\n` +
+                                `📞 SĐT: ${this.contactForm.phone || '-'}\n` +
+                                `📧 Email: ${this.contactForm.email || '-'}\n` +
+                                `📝 Nội dung: ${this.contactForm.message}\n` +
+                                `🔔 Thiết bị: ${this.detectDevice()}\n` +
+                                `⏰ Lúc: ${dateformat}`;
+
+                            await this.sendTelegramMessage(message);
+
+                            alert('Đã gửi yêu cầu! KemStore sẽ liên hệ sớm nhất.');
+
+                            this.contactForm = { name: '', phone: '', email: '', message: '' };
+
+                        } catch (e) {
+
+                            console.error(e);
+                            alert('Gửi không thành công: ' + (e.message || 'Vui lòng thử lại sau.'));
+
+                        } finally {
+
+                            this.contactFormSubmitting = false;
+
+                        }
+
+                    },
+
+                    toggleWishlist(product) {
+
+                        product.favorite = !product.favorite;
+
+                        localStorage.setItem(
+                            'wishlist',
+                            JSON.stringify(this.products)
+                        );
+
+                    },
+
+                    submitPopup() {
+
+                        if (!this.popupEmail) return;
+
+                        const message =
+                            `🎁 Popup voucher (KemStore.vn)\n` +
+                            `📧 Email: ${this.popupEmail}\n` +
+                            `🔔 Thiết bị: ${this.detectDevice()}\n` +
+                            `⏰ Lúc: ${this.getTelegramDateFormat()}`;
+
+                        this.sendTelegramMessage(message)
+                            .then(() => {
+
+                                localStorage.setItem('kemstore_voucher_subscribed', '1');
+
+                                alert('Cảm ơn bạn! Voucher sẽ được gửi qua email.');
+
+                                this.showPopup = false;
+
+                                this.popupEmail = '';
+
+                                this.teardownPopupListeners();
+
+                            })
+                            .catch((error) => {
+
+                                console.error(error);
+                                alert('Gửi không thành công: ' + (error.message || 'Vui lòng thử lại sau.'));
+
+                            });
+
+                    },
+
+                    closePopup() {
+
+                        this.showPopup = false;
+
+                        localStorage.setItem('kemstore_voucher_dismissed', String(Date.now()));
+
+                        this.teardownPopupListeners();
+
+                    },
+
+                    canShowPopup() {
+
+                        if (localStorage.getItem('kemstore_voucher_subscribed')) return false;
+
+                        const dismissed = localStorage.getItem('kemstore_voucher_dismissed');
+
+                        if (dismissed) {
+
+                            const days = (Date.now() - parseInt(dismissed, 10)) / (1000 * 60 * 60 * 24);
+
+                            if (days < 7) return false;
+
+                        }
+
+                        if (sessionStorage.getItem('kemstore_voucher_shown')) return false;
+
+                        return true;
+
+                    },
+
+                    tryShowPopup() {
+
+                        if (this._popupShown || !this.canShowPopup()) return;
+
+                        if (this.showMobileMenu || this.productModal) return;
+
+                        this._popupShown = true;
+
+                        sessionStorage.setItem('kemstore_voucher_shown', '1');
+
+                        this.showPopup = true;
+
+                        this.teardownPopupListeners();
+
+                    },
+
+                    onPopupScroll() {
+
+                        if (this._popupShown) return;
+
+                        const doc = document.documentElement;
+
+                        const scrolled = (window.scrollY + window.innerHeight) / doc.scrollHeight;
+
+                        const elapsed = Date.now() - this._pageLoadAt;
+
+                        if (scrolled >= 0.35 && elapsed >= 25000) {
+
+                            this.tryShowPopup();
+
+                        }
+
+                    },
+
+                    teardownPopupListeners() {
+
+                        if (this._popupScrollHandler) {
+
+                            window.removeEventListener('scroll', this._popupScrollHandler);
+
+                            this._popupScrollHandler = null;
+
+                        }
+
+                        if (this._popupTimer) {
+
+                            clearTimeout(this._popupTimer);
+
+                            this._popupTimer = null;
+
+                        }
+
+                    },
+
+                    initPopupLogic() {
+
+                        if (!this.canShowPopup()) return;
+
+                        this._pageLoadAt = Date.now();
+
+                        this._popupScrollHandler = this.onPopupScroll.bind(this);
+
+                        window.addEventListener('scroll', this._popupScrollHandler, { passive: true });
+
+                        this._popupTimer = setTimeout(() => {
+
+                            this.tryShowPopup();
+
+                        }, 60000);
+
+                    }
+
+                },
+
+                mounted() {
+
+                    const saved = localStorage.getItem('wishlist');
+
+                    if (saved) {
+
+                        try {
+
+                            const list = JSON.parse(saved);
+
+                            this.products.forEach(p => {
+
+                                const found = list.find(i => i.id === p.id);
+
+                                if (found) p.favorite = found.favorite;
+
+                            });
+
+                        } catch (e) { }
+
+                    }
+
+                    this.injectYoutubeSchema();
+
+                    this.$nextTick(() => {
+
+                        this.initPopupLogic();
+
+                        const runLog = () => this.logTelegram();
+
+                        if ('requestIdleCallback' in window) {
+
+                            requestIdleCallback(runLog, { timeout: 5000 });
+
+                        } else {
+
+                            setTimeout(runLog, 2500);
+
+                        }
+
+                    });
+
+                },
+
+                beforeUnmount() {
+
+                    this.teardownPopupListeners();
+
+                }
+
+            }).mount('#app');
+
+        }
+
+        if (document.readyState === 'loading') {
+
+            document.addEventListener('DOMContentLoaded', initKemStoreApp);
+
+        } else {
+
+            initKemStoreApp();
+
+        }
+
+    </script>
+
+    <!-- FAQ SCHEMA -->
+
+    <script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"KemStore có giao hàng toàn quốc không?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Có, KemStore giao hàng toàn quốc."
+}
+},
+{
+"@type":"Question",
+"name":"Có thiết kế sticker riêng không?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Có hỗ trợ thiết kế sticker theo yêu cầu."
+}
+}
+]
+}
+</script>
+
+</body>
+
+</html>
