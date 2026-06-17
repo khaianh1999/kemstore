@@ -39,7 +39,7 @@
         content="https://kemstore.vn">
 
     <meta property="og:image"
-        content="./assets/meo-kem-banner.jpg">
+        content="./assets/meo-kem-banner.png">
 
     <!-- Twitter -->
 
@@ -53,7 +53,7 @@
         content="Học tập vui vẻ cùng Mèo Kem">
 
     <meta name="twitter:image"
-        content="./assets/meo-kem-banner.jpg">
+        content="./assets/meo-kem-banner.png">
 
     <!-- Fonts -->
 
@@ -92,7 +92,7 @@
         "@type":"Organization",
         "name":"KemStore.vn",
         "url":"https://kemstore.vn",
-        "logo":"https://kemstore.vn/assets/logo.png",
+        "logo":"https://kemstore.vn/assets/logo.jpg",
         "sameAs":[
             "https://www.facebook.com/",
             "https://www.youtube.com/",
@@ -124,7 +124,7 @@
       "@context":"https://schema.org",
       "@type":"Store",
       "name":"KemStore.vn",
-      "image":"https://kemstore.vn/assets/logo.png",
+      "image":"https://kemstore.vn/assets/logo.jpg",
       "url":"https://kemstore.vn",
       "telephone":"+84",
       "priceRange":"₫₫",
@@ -200,7 +200,7 @@
                     class="flex items-center gap-3">
 
                     <img
-                        src="./assets/logo.png"
+                        src="./assets/logo.jpg"
                         alt="Mèo Kem"
                         class="w-12 h-12 rounded-full">
 
@@ -1104,35 +1104,35 @@
                 class="grid grid-cols-2 md:grid-cols-4 gap-5">
 
                 <img
-                    src="./assets/sticker1.jpg"
+                    src="./assets/sticker1.png"
                     class="rounded-3xl">
 
                 <img
-                    src="./assets/sticker2.jpg"
+                    src="./assets/sticker2.png"
                     class="rounded-3xl">
 
                 <img
-                    src="./assets/sticker3.jpg"
+                    src="./assets/sticker3.png"
                     class="rounded-3xl">
 
                 <img
-                    src="./assets/sticker4.jpg"
+                    src="./assets/sticker4.png"
                     class="rounded-3xl">
 
                 <img
-                    src="./assets/sticker5.jpg"
+                    src="./assets/sticker5.png"
                     class="rounded-3xl">
 
                 <img
-                    src="./assets/sticker6.jpg"
+                    src="./assets/sticker6.png"
                     class="rounded-3xl">
 
                 <img
-                    src="./assets/sticker7.jpg"
+                    src="./assets/sticker7.png"
                     class="rounded-3xl">
 
                 <img
-                    src="./assets/sticker8.jpg"
+                    src="./assets/sticker8.png"
                     class="rounded-3xl">
 
             </div>

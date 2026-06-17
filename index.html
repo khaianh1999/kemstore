@@ -103,9 +103,9 @@
         "logo":"https://kemstore.vn/assets/images/logo.jpg",
         "sameAs":[
             "https://www.facebook.com/tiemtaphoanhakem01",
-            "https://www.youtube.com/@tiemtaphoanhakem",
+            "https://www.youtube.com/@tiemtaphoanhakem?sub_confirmation=1",
             "https://www.tiktok.com/@tiemtaphoanhakem_01",
-            "https://shopee.vn/tiemtaphoanhakemm"
+            "https://shopee.vn/tiemtaphoanhakem"
         ]
     }
     </script>
@@ -148,10 +148,21 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         body {
             background: #fff8f6;
+            overflow-x: hidden;
+            max-width: 100%;
+            overscroll-behavior-x: none;
+            touch-action: pan-y pinch-zoom;
+        }
+
+        #app {
+            overflow-x: clip;
+            max-width: 100%;
         }
 
         /* Ẩn popup/modal trước khi Vue mount — tránh nháy */
@@ -206,6 +217,9 @@
 
         .hide-scrollbar {
             scrollbar-width: none;
+            overscroll-behavior-x: contain;
+            -webkit-overflow-scrolling: touch;
+            max-width: 100%;
         }
 
         .mobile-drawer-enter-active,
@@ -263,6 +277,47 @@
             white-space: nowrap;
             border: 0;
         }
+
+        @keyframes zalo-shake {
+
+            0%,
+            50%,
+            100% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            8%,
+            24%,
+            40% {
+                transform: translate3d(0, -4px, 0) scale(1.06);
+            }
+
+            16%,
+            32% {
+                transform: translate3d(0, 0, 0) scale(1.03);
+            }
+        }
+
+        .zalo-float-wrap {
+            contain: layout style paint;
+        }
+
+        .zalo-float-btn {
+            animation: zalo-shake 2.8s ease-in-out infinite;
+            transform-origin: center center;
+            will-change: transform;
+        }
+
+        .zalo-float-btn:hover {
+            animation-play-state: paused;
+            transform: scale(1.08);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .zalo-float-btn {
+                animation: none;
+            }
+        }
     </style>
 
 </head>
@@ -275,7 +330,7 @@
             <h1 style="font-size:1.5rem;font-weight:800;color:#ee5f6d">KemStore.vn — Sticker &amp; đồ dùng học tập Mèo
                 Kem</h1>
             <p>Sticker cute, sổ tay, bút viết, bookmark và combo học tập. Mua tại Shopee: tiemtaphoanhakemm</p>
-            <p><a href="https://shopee.vn/tiemtaphoanhakemm">Mua trên Shopee</a> · <a href="#contact">Liên hệ</a></p>
+            <p><a href="https://shopee.vn/tiemtaphoanhakem">Mua trên Shopee</a> · <a href="#contact">Liên hệ</a></p>
         </div>
     </noscript>
 
@@ -580,7 +635,7 @@
 
                     <!-- RIGHT: Visual + cards -->
 
-                    <div class="relative">
+                    <div class="relative overflow-hidden">
 
                         <div class="absolute -top-8 -left-8 w-40 h-40 rounded-full bg-white/50 blur-2xl">
                         </div>
@@ -622,10 +677,10 @@
                             <div class="px-6 sm:px-7 pb-7">
 
                                 <div class="relative rounded-3xl overflow-hidden border border-white/70">
-                                    <img src="./assets/images/logo.jpg"
+                                    <img src="./assets/images/hero-banner.png"
                                         alt="KemStore.vn - Sticker và đồ dùng học tập dễ thương"
-                                        class="w-full h-64 sm:h-72 object-cover"
-                                        onerror="this.src='./assets/images/logo.jpg'">
+                                        class="w-full h-64 sm:h-72 object-cover object-center" loading="lazy"
+                                        onerror="this.src='./assets/images/back-to-school-banner.png'">
 
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent">
@@ -929,10 +984,10 @@
 
                             <div class="relative rounded-3xl overflow-hidden border-4 border-white/80 shadow-xl">
 
-                                <img src="./assets/images/logo.jpg"
+                                <img src="./assets/images/back-to-school-banner.png"
                                     alt="Combo Back To School - sticker và đồ dùng học tập Mèo Kem KemStore.vn"
-                                    class="w-full h-64 sm:h-80 object-cover" loading="lazy"
-                                    onerror="this.src='./assets/images/logo.jpg'">
+                                    class="w-full h-64 sm:h-80 object-cover object-center" loading="lazy"
+                                    onerror="this.src='./assets/images/blog/tuu-truong-combo.png'">
 
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none">
@@ -1005,7 +1060,7 @@
 
                     </div>
 
-                    <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1" role="tablist"
+                    <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1 max-w-full" role="tablist"
                         aria-label="Lọc danh mục sản phẩm">
 
                         <button @click="changeCategory('all')" type="button" role="tab" :aria-selected="category=='all'"
@@ -1064,8 +1119,8 @@
                             </span>
 
                             <span
-                                class="absolute left-3 bottom-3 bg-white/95 text-gray-700 px-3 py-1 rounded-full text-xs font-bold capitalize">
-                                {{ product.category }}
+                                class="absolute left-3 bottom-3 bg-white/95 text-gray-700 px-3 py-1 rounded-full text-xs font-bold">
+                                {{ getCategoryLabel(product.category) }}
                             </span>
 
                         </div>
@@ -1203,8 +1258,8 @@
 
                                 <div>
 
-                                    <p class="text-xs font-bold uppercase tracking-wider text-kem capitalize">
-                                        {{ productModal.category }}
+                                    <p class="text-xs font-bold uppercase tracking-wider text-kem">
+                                        {{ getCategoryLabel(productModal.category) }}
                                     </p>
 
                                     <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1">
@@ -1625,8 +1680,8 @@
                             </h2>
 
                             <p class="mt-4 text-gray-700 text-lg leading-relaxed">
-                                Đăng ký để nhận mã ưu đãi và cập nhật bộ sưu tập sticker Mèo Kem mới. Thông tin được gửi
-                                về Telegram để xử lý nhanh.
+                                Đăng ký để nhận mã ưu đãi và cập nhật bộ sưu tập sticker Mèo Kem mới. Thông tin sẽ được gửi
+                                về nhân viên chăm sóc khách hàng để xử lý nhanh.
                             </p>
 
                             <div class="mt-6 flex flex-wrap gap-3">
@@ -1721,7 +1776,7 @@
 
                         <p class="mt-4 text-gray-600 text-lg leading-relaxed">
                             Bạn cần tư vấn chọn sticker, combo tựu trường hoặc đặt số lượng lớn? Gửi thông tin để
-                            KemStore.vn hỗ trợ nhanh qua Telegram.
+                            KemStore.vn hỗ trợ nhanh.
                         </p>
 
                         <div class="mt-6 space-y-3">
@@ -2103,18 +2158,18 @@
                             </li>
 
                             <li>
-                                <a href="#products" @click="changeCategory('bookmark')"
-                                    class="hover:text-kem transition inline-flex items-center gap-2">
-                                    <i class="fa-solid fa-chevron-right text-[10px] text-kem"></i>
-                                    Bookmark
-                                </a>
-                            </li>
-
-                            <li>
                                 <a href="#products" @click="changeCategory('combo')"
                                     class="hover:text-kem transition inline-flex items-center gap-2">
                                     <i class="fa-solid fa-chevron-right text-[10px] text-kem"></i>
                                     Combo tựu trường
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#products" @click="changeCategory('accessory')"
+                                    class="hover:text-kem transition inline-flex items-center gap-2">
+                                    <i class="fa-solid fa-chevron-right text-[10px] text-kem"></i>
+                                    Phụ kiện
                                 </a>
                             </li>
 
@@ -2289,6 +2344,31 @@
 
         </teleport>
 
+        <!-- Nút Zalo nổi -->
+
+        <teleport to="body">
+
+            <div
+                class="zalo-float-wrap fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-[55] w-14 h-14 sm:w-16 sm:h-16 overflow-hidden pointer-events-none">
+
+                <a :href="socialLinks.zalo" target="_blank" rel="noopener noreferrer"
+                    class="zalo-float-btn group pointer-events-auto flex items-center justify-center w-full h-full rounded-full bg-[#0068FF] text-white border-2 border-white hover:bg-[#0058d9] transition-colors"
+                    aria-label="Chat Zalo KemStore — 0326 927 477">
+
+                    <img src="./assets/images/icon-zalo.svg" alt="" class="w-9 h-9 sm:w-10 sm:h-10 pointer-events-none"
+                        width="40" height="40">
+
+                    <span
+                        class="absolute right-full mr-3 px-3 py-1.5 rounded-xl bg-gray-900 text-white text-sm font-bold whitespace-nowrap opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all pointer-events-none hidden sm:block">
+                        Chat Zalo
+                    </span>
+
+                </a>
+
+            </div>
+
+        </teleport>
+
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js" defer></script>
@@ -2342,9 +2422,10 @@
 
                         socialLinks: {
                             facebook: 'https://www.facebook.com/tiemtaphoanhakem01',
-                            youtube: 'https://www.youtube.com/@tiemtaphoanhakem',
+                            youtube: 'https://www.youtube.com/@tiemtaphoanhakem?sub_confirmation=1',
                             tiktok: 'https://www.tiktok.com/@tiemtaphoanhakem_01',
-                            shopee: 'https://shopee.vn/tiemtaphoanhakemm'
+                            shopee: 'https://shopee.vn/tiemtaphoanhakem',
+                            zalo: 'https://zalo.me/0326927477'
                         },
 
                         schoolBenefits: [
@@ -2399,7 +2480,7 @@
 
                             {
                                 id: 3,
-                                name: 'Bút',
+                                name: 'Bút viết',
                                 slug: 'pen'
                             },
 
@@ -2411,8 +2492,8 @@
 
                             {
                                 id: 5,
-                                name: 'Bookmark',
-                                slug: 'bookmark'
+                                name: 'Phụ kiện',
+                                slug: 'accessory'
                             }
 
                         ],
@@ -2421,40 +2502,324 @@
 
                             {
                                 id: 1,
-                                name: 'Sticker Mèo Kem',
-                                price: 19000,
-                                oldPrice: 29000,
-                                discount: 35,
-                                review: 125,
-                                category: 'sticker',
+                                name: 'Bút dao rọc giấy (kèm 2 ngòi thay)',
+                                price: 45000,
+                                oldPrice: 54878,
+                                discount: 18,
+                                review: 38,
+                                category: 'accessory',
                                 favorite: false,
-                                image: './assets/images/logo.jpg',
-                                description: 'Sticker Mèo Kem siêu dễ thương, in sắc nét, dán laptop, sổ tay, bình nước — thiết kế độc quyền KemStore.vn',
-                                link: 'https://shopee.vn/tiemtaphoanhakemm'
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lvlhxonkxmos03.webp',
+                                description: 'Bút dao rọc giấy tiện lợi, kèm 2 ngòi thay — phù hợp cắt sticker, bọc sách và trang trí sổ tay.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
                             },
 
                             {
                                 id: 2,
-                                name: 'Sổ Tay Mèo Kem',
-                                price: 49000,
-                                review: 56,
-                                category: 'notebook',
+                                name: 'Set 200 tấm sticker trang trí sổ, bìa sách',
+                                price: 35000,
+                                oldPrice: 52239,
+                                discount: 33,
+                                review: 230,
+                                category: 'sticker',
                                 favorite: false,
-                                image: './assets/images/logo.jpg',
-                                description: 'Sổ tay học tập Mèo Kem, giấy dày, bìa cứng — phù hợp ghi chép và trang trí góc học tập',
-                                link: 'https://shopee.vn/tiemtaphoanhakemm'
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lv4xrhtmjda146.webp',
+                                description: 'Bộ 200 tấm sticker đa mẫu — trang trí sổ tay, bìa sách, nhãn dán và góc học tập.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
                             },
 
                             {
                                 id: 3,
-                                name: 'Combo Học Tập',
-                                price: 99000,
-                                review: 89,
+                                name: 'Cuộn sticker 500 tem nhiều mẫu xinh (gấu dâu)',
+                                price: 19000,
+                                oldPrice: 20000,
+                                discount: 5,
+                                review: 76,
+                                category: 'sticker',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lw80xfz6gc0paa.webp',
+                                description: 'Cuộn sticker 500 tem họa tiết gấu dâu và nhiều mẫu cute — dễ xé, dễ dán.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 4,
+                                name: 'Sổ lò xo A5 Purin 120 trang',
+                                price: 26000,
+                                oldPrice: 30000,
+                                discount: 13,
+                                review: 48,
+                                category: 'notebook',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxtf45hd9bdl8f.webp',
+                                description: 'Sổ lò xo A5 120 trang họa tiết Purin dễ thương — ghi chép và ôn bài tiện lợi.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 5,
+                                name: 'Sổ lò xo A5 Sweetblue 120 trang',
+                                price: 22000,
+                                oldPrice: 30000,
+                                discount: 26,
+                                review: 48,
+                                category: 'notebook',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxteik4uunrv2d.webp',
+                                description: 'Sổ lò xo A5 Sweetblue 120 trang — bìa xinh, giấy ghi chép mịn.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 6,
+                                name: 'Sổ lò xo A5 Capybara 120 trang',
+                                price: 22000,
+                                oldPrice: 25000,
+                                discount: 12,
+                                review: 11,
+                                category: 'notebook',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxten42iwvrt17.webp',
+                                description: 'Sổ lò xo A5 Capybara 120 trang — hoạ tiết capybara siêu cute cho học sinh.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 7,
+                                name: 'Bút highlight 6 màu vuốt mèo siêu cute',
+                                price: 41160,
+                                oldPrice: 42000,
+                                discount: 2,
+                                review: 48,
+                                category: 'pen',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lv4xgi6j8kc99c.webp',
+                                description: 'Bộ bút highlight 6 màu nắp vuốt mèo — tô sáng sách vở, dễ thương và tiện dụng.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 8,
+                                name: 'Combo 150 tấm sticker (tặng nhíp)',
+                                price: 39000,
+                                oldPrice: 59091,
+                                discount: 34,
+                                review: 575,
                                 category: 'combo',
                                 favorite: false,
-                                image: './assets/images/logo.jpg',
-                                description: 'Combo học tập tiết kiệm gồm sticker, sổ tay, bút — quà tặng tựu trường ý nghĩa',
-                                link: 'https://shopee.vn/tiemtaphoanhakemm'
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m4m013o5jqbr9a.webp',
+                                description: 'Combo 150 tấm sticker nhãn dán trang trí — tặng kèm nhíp gắp, best seller KemStore.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 9,
+                                name: 'Sổ Sticker mini bỏ túi trang trí vở',
+                                price: 55000,
+                                oldPrice: 59783,
+                                discount: 8,
+                                review: 90,
+                                category: 'sticker',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mcvlienavr1p68.webp',
+                                description: 'Sổ sticker mini tiện mang theo — trang trí vở, sổ tay và phụ kiện handmade.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 10,
+                                name: 'Set bút bi bấm sinh viên hoạt tiết cute',
+                                price: 23000,
+                                oldPrice: 25000,
+                                discount: 8,
+                                review: 6,
+                                category: 'pen',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lv7buohif6d5fd.webp',
+                                description: 'Set bút bi bấm mực đen hoạ tiết cute — viết mượt, phù hợp học sinh sinh viên.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 11,
+                                name: 'Sổ lò xo A5 hoạt hình dễ thương 120 trang',
+                                price: 23000,
+                                oldPrice: 30000,
+                                discount: 23,
+                                review: 538,
+                                category: 'notebook',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mlnnl4dk3oqqae.webp',
+                                description: 'Sổ lò xo A5 hoạt hình 120 trang — mẫu đa dạng, bán chạy trên Shopee.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 12,
+                                name: 'Combo học tập Capybara siu cute',
+                                price: 69000,
+                                oldPrice: 79000,
+                                discount: 12,
+                                review: 48,
+                                category: 'combo',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxtdeiqk4f6j67.webp',
+                                description: 'Combo đồ dùng học tập chủ đề Capybara — tiết kiệm hơn mua lẻ, quà tựu trường ý nghĩa.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 13,
+                                name: 'Sổ lò xo A5 khủng long cute 120 trang',
+                                price: 20000,
+                                oldPrice: 25000,
+                                discount: 20,
+                                review: 48,
+                                category: 'notebook',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxtesh28hqsb1e.webp',
+                                description: 'Sổ lò xo A5 khủng long 120 trang — bìa cứng cute, phù hợp ghi chép hằng ngày.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 14,
+                                name: 'Móc khóa mèo bông dễ thương',
+                                price: 25000,
+                                oldPrice: 30000,
+                                discount: 33,
+                                review: 358,
+                                category: 'accessory',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m4m31c2xl2g099.webp',
+                                description: 'Móc khóa mèo bông treo chìa khóa, túi xách — phụ kiện cute làm quà tặng.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 15,
+                                name: 'Sổ dán nam châm từ tính Natra Babythree',
+                                price: 39999,
+                                oldPrice: 58822,
+                                discount: 32,
+                                review: 9,
+                                category: 'notebook',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m7brpf9n99gze2.webp',
+                                description: 'Sổ dán nam châm size to — ghi chú nhanh, dán tủ lạnh hoặc bàn học tiện lợi.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 16,
+                                name: 'Sổ sticker có cắt sẵn siu cute (kèm nhíp)',
+                                price: 62000,
+                                oldPrice: 68889,
+                                discount: 10,
+                                review: 1000,
+                                category: 'sticker',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ltcnrmi744w4ea.webp',
+                                description: 'Sổ sticker cắt sẵn hàng trăm mẫu — kèm nhíp gắp, best seller 1k+ đã bán.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 17,
+                                name: 'Combo 6 món đồ dùng học tập (bút và vở)',
+                                price: 55270,
+                                oldPrice: 69088,
+                                discount: 20,
+                                review: 541,
+                                category: 'combo',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mgosuscldudp73.webp',
+                                description: 'Combo 6 món gồm bút và vở — đủ bộ tựu trường, tiết kiệm chi phí.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 18,
+                                name: '2 bút chì bấm ngòi 0.5mm hình cute khủng long',
+                                price: 25000,
+                                oldPrice: 30000,
+                                discount: 16,
+                                review: 48,
+                                category: 'pen',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lv4xmy8zlfcpe6.webp',
+                                description: 'Bút chì bấm ngòi 0.5mm hoạ tiết khủng long — viết êm, thiết kế dễ thương.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 19,
+                                name: '2 Gương mini bỏ túi hình gấu xinh',
+                                price: 26000,
+                                oldPrice: 30000,
+                                discount: 13,
+                                review: 7,
+                                category: 'accessory',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lwhzyo787pw90b.webp',
+                                description: 'Gương mini cầm tay hình gấu — bỏ túi tiện lợi, trang điểm và soi gương nhanh.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 20,
+                                name: 'Sticker anime trang trí top, móc khóa handmade',
+                                price: 50000,
+                                oldPrice: 64935,
+                                discount: 23,
+                                review: 3,
+                                category: 'sticker',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mid7u2kvz954fe.webp',
+                                description: 'Sticker anime trang trí kèm móc khóa handmade — phong cách top idol, độc đáo.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 21,
+                                name: 'Lucky Box học tập, combo đồ học tập',
+                                price: 48510,
+                                oldPrice: 59000,
+                                discount: 17,
+                                review: 48,
+                                category: 'combo',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m4m0wp8st34793.webp',
+                                description: 'Lucky Box đồ học tập bất ngờ — gồm sách, móc khóa và phụ kiện cute.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 22,
+                                name: 'Sticker hình dán 3D pha lê dập nổi',
+                                price: 19000,
+                                oldPrice: 35000,
+                                discount: 45,
+                                review: 889,
+                                category: 'sticker',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mlx13vpu0lq80c.webp',
+                                description: 'Miếng dán sticker 3D pha lê dập nổi — lấp lánh, trang trí điện thoại và sổ tay.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                            },
+
+                            {
+                                id: 23,
+                                name: 'Sổ sticker công chúa, thiên thần xinh đẹp',
+                                price: 35000,
+                                oldPrice: 40000,
+                                discount: 12,
+                                review: 48,
+                                category: 'sticker',
+                                favorite: false,
+                                image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m2trsb1x5i9mcf.webp',
+                                description: 'Sổ sticker chủ đề công chúa, thiên thần — nhiều mẫu xinh cho bé gái yêu thích.',
+                                link: 'https://shopee.vn/tiemtaphoanhakem'
                             }
 
                         ],
@@ -2486,7 +2851,7 @@
                                 id: 1,
                                 title: 'Top Sticker Cute Cho Học Sinh',
                                 description: 'Gợi ý sticker cute dễ phối góc học tập: sticker Mèo Kem, theo chủ đề, theo màu và theo dịp.',
-                                image: './assets/images/blog/top-sticker-cute-cover.jpg',
+                                image: './assets/images/blog/top-sticker-cute-cover.png',
                                 link: './blog/top-sticker-cute-cho-hoc-sinh.html'
                             },
 
@@ -2494,7 +2859,7 @@
                                 id: 2,
                                 title: 'Cách Trang Trí Góc Học Tập',
                                 description: 'Checklist và ý tưởng trang trí góc học tập đẹp: sticker, note, bút, sổ tay và phụ kiện.',
-                                image: './assets/images/blog/trang-tri-goc-hoc-tap-cover.jpg',
+                                image: './assets/images/blog/trang-tri-goc-hoc-tap-cover.png',
                                 link: './blog/cach-trang-tri-goc-hoc-tap.html'
                             },
 
@@ -2502,7 +2867,7 @@
                                 id: 3,
                                 title: 'Checklist Đồ Dùng Tựu Trường',
                                 description: 'Danh sách đồ dùng tựu trường cho học sinh: sổ tay, bút, sticker, bookmark, phụ kiện kèm mẹo chọn.',
-                                image: './assets/images/blog/checklist-tuu-truong-cover.jpg',
+                                image: './assets/images/blog/checklist-tuu-truong-cover.png',
                                 link: './blog/checklist-do-dung-tuu-truong.html'
                             }
 
@@ -2557,6 +2922,18 @@
 
                         this.category = category;
 
+                        const el = document.getElementById('products');
+
+                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    },
+
+                    getCategoryLabel(slug) {
+
+                        const found = this.categories.find(item => item.slug === slug);
+
+                        return found ? found.name : slug;
+
                     },
 
                     quickView(product) {
@@ -2594,7 +2971,7 @@
                                     description: video.description,
                                     embedUrl: 'https://www.youtube.com/embed/' + video.id,
                                     contentUrl: video.url,
-                                    thumbnailUrl: 'https://img.youtube.com/vi/' + video.id + '/hqdefault.jpg',
+                                    thumbnailUrl: 'https://img.youtube.com/vi/' + video.id + '/hqdefault.png',
                                     publisher: {
                                         '@type': 'Organization',
                                         name: 'KemStore.vn',
