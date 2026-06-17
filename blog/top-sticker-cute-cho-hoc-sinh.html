@@ -34,8 +34,11 @@
     .badge{display:inline-flex;gap:8px;align-items:center;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--kem);background:#fef2f3;border:1px solid #f9d0d5;padding:8px 12px;border-radius:999px}
     h1{margin:14px 0 8px;font-size:34px;line-height:1.15}
     .meta{color:#6b7280;font-weight:600}
-    .cover{aspect-ratio:16/9;background:#f3f4f6;border-top:1px solid #f3f4f6;border-bottom:1px solid #f3f4f6}
-    .cover-note{padding:14px 18px;color:#6b7280;font-size:14px}
+    .cover{aspect-ratio:16/9;background:#f3f4f6;border-top:1px solid #f3f4f6;border-bottom:1px solid #f3f4f6;overflow:hidden}
+    .cover img{display:block;width:100%;height:100%;object-fit:cover}
+    .figure{margin:22px 0;border-radius:18px;overflow:hidden;border:1px solid #f3f4f6;background:#fafafa}
+    .figure img{display:block;width:100%;height:auto}
+    .figure figcaption{padding:10px 14px;color:#6b7280;font-size:14px;font-weight:600}
     .content{padding:24px}
     h2{margin:28px 0 12px;font-size:24px}
     h3{margin:20px 0 10px;font-size:18px}
@@ -72,12 +75,14 @@
       </header>
 
       <div class="cover">
-        <!-- Ảnh cover cần bổ sung:
-             /assets/images/blog/top-sticker-cute-cover.jpg
-             Kích thước khuyến nghị: 1200×630 (OG), tối thiểu 960×540. -->
-      </div>
-      <div class="cover-note">
-        Gợi ý ảnh: một layout sticker + sổ tay + bút trên nền sáng, có điểm nhấn màu <strong style="color:#ee5f6d">#ee5f6d</strong>.
+        <img
+          src="../assets/images/blog/top-sticker-cute-cover.jpg"
+          alt="Bộ sưu tập sticker cute, sổ tay và bút trên bàn học tông pastel hồng kem"
+          width="1200"
+          height="675"
+          loading="eager"
+          fetchpriority="high"
+        />
       </div>
 
       <article class="content">
@@ -95,6 +100,16 @@
         <p>Để góc học tập đẹp và gọn, bạn nên chọn sticker theo <strong>1 chủ đề chính</strong> (nhân vật/động vật/quote) và <strong>2–3 màu chủ đạo</strong>. Nếu mới bắt đầu, hãy ưu tiên sticker tông pastel, nét vẽ đơn giản, kích thước vừa phải.</p>
 
         <h2 id="goi-y">2) 15 gợi ý sticker cute cho học sinh (chia theo nhóm)</h2>
+        <figure class="figure">
+          <img
+            src="../assets/images/blog/top-sticker-1.jpg"
+            alt="Bộ sticker cute tông pastel, dễ phối với sổ tay và planner"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+          <figcaption>Sticker tông pastel — dễ phối với sổ tay, planner và bút gel.</figcaption>
+        </figure>
         <h3>Nhóm A — Sticker Mèo Kem (độc quyền)</h3>
         <ul>
           <li>Sticker Mèo Kem học bài (dán sổ tay, planner).</li>
@@ -117,11 +132,32 @@
         </ul>
 
         <h2 id="phoi-goc-hoc-tap">3) Mẹo phối góc học tập đẹp (nhìn như setup “study with me”)</h2>
+        <figure class="figure">
+          <img
+            src="../assets/images/blog/top-sticker-2.jpg"
+            alt="Góc học tập gọn gàng với sticker, sổ tay và đồ dùng tông hồng kem"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+          <figcaption>Góc học tập gọn — sticker làm điểm nhấn, không dán quá dày.</figcaption>
+        </figure>
         <ul>
           <li>Dán sticker theo “cụm” 3–5 cái thay vì dán rải rác.</li>
           <li>Dùng 1 sticker lớn làm điểm nhấn + sticker nhỏ làm phụ.</li>
           <li>Giữ khoảng trống (negative space) để đỡ rối mắt.</li>
         </ul>
+
+        <figure class="figure">
+          <img
+            src="../assets/images/blog/top-sticker-3.jpg"
+            alt="Cận cảnh sổ tay đã dán sticker cute cùng bút gel"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+          <figcaption>Cận cảnh sổ tay dán sticker — gợi ý dán theo cụm 3–5 cái cho gọn mắt.</figcaption>
+        </figure>
 
         <h2 id="mua-o-dau">4) Mua sticker ở đâu?</h2>
         <p>Bạn có thể xem các mẫu sticker và đồ dùng học tập trên trang chủ KemStore.vn hoặc mua nhanh qua Shopee.</p>
@@ -133,7 +169,7 @@
         </div>
 
         <div class="footer">
-          Gợi ý ảnh bổ sung: thêm 3 ảnh trong bài (tùy chọn) — 1 ảnh sticker set, 1 ảnh góc học tập, 1 ảnh cận cảnh sổ tay dán sticker. Tên file gợi ý: <code>top-sticker-1.jpg</code>, <code>top-sticker-2.jpg</code>, <code>top-sticker-3.jpg</code> đặt trong <code>/assets/images/blog/</code>.
+          Bài viết bởi <a href="../index.html">KemStore.vn</a> — sticker cute &amp; đồ dùng học tập.
         </div>
       </article>
     </div>

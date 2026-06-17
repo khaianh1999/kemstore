@@ -27,14 +27,18 @@
     :root{--kem:#ee5f6d;--bg:#fff8f6;}
     *{box-sizing:border-box}
     body{margin:0;font-family:Quicksand,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#111827}
+    a{color:inherit}
     .wrap{max-width:900px;margin:0 auto;padding:28px 16px 56px}
     .card{background:#fff;border:1px solid #f3f4f6;border-radius:24px;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,.06)}
     .hero{padding:28px 24px 10px}
     .badge{display:inline-flex;gap:8px;align-items:center;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--kem);background:#fef2f3;border:1px solid #f9d0d5;padding:8px 12px;border-radius:999px}
     h1{margin:14px 0 8px;font-size:34px;line-height:1.15}
     .meta{color:#6b7280;font-weight:600}
-    .cover{aspect-ratio:16/9;background:#f3f4f6;border-top:1px solid #f3f4f6;border-bottom:1px solid #f3f4f6}
-    .cover-note{padding:14px 18px;color:#6b7280;font-size:14px}
+    .cover{aspect-ratio:16/9;background:#f3f4f6;border-top:1px solid #f3f4f6;border-bottom:1px solid #f3f4f6;overflow:hidden}
+    .cover img{display:block;width:100%;height:100%;object-fit:cover}
+    .figure{margin:22px 0;border-radius:18px;overflow:hidden;border:1px solid #f3f4f6;background:#fafafa}
+    .figure img{display:block;width:100%;height:auto}
+    .figure figcaption{padding:10px 14px;color:#6b7280;font-size:14px;font-weight:600}
     .content{padding:24px}
     h2{margin:28px 0 12px;font-size:24px}
     p,li{color:#374151;line-height:1.75;font-weight:600}
@@ -44,6 +48,7 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800;text-decoration:none}
     .btn-primary{background:var(--kem);color:#fff}
     .btn-ghost{background:#fff;border:1px solid #f9d0d5;color:#111827}
+    .footer{margin-top:18px;color:#6b7280;font-weight:600;font-size:14px}
   </style>
 
   <script type="application/ld+json">
@@ -69,12 +74,14 @@
       </header>
 
       <div class="cover">
-        <!-- Ảnh cover cần bổ sung:
-             /assets/images/blog/checklist-tuu-truong-cover.jpg
-             Khuyến nghị: 1200×630 (OG), tối thiểu 960×540. -->
-      </div>
-      <div class="cover-note">
-        Gợi ý ảnh: flatlay bộ đồ dùng học tập (sổ tay + bút + sticker + bookmark + note) trên nền sáng.
+        <img
+          src="../assets/images/blog/checklist-tuu-truong-cover.jpg"
+          alt="Bộ đồ dùng tựu trường: sổ tay, bút, sticker, bookmark và note trên bàn sáng"
+          width="1200"
+          height="675"
+          loading="eager"
+          fetchpriority="high"
+        />
       </div>
 
       <article class="content">
@@ -83,6 +90,16 @@
         </div>
 
         <h2>1) Danh sách đồ dùng tựu trường (cơ bản)</h2>
+        <figure class="figure">
+          <img
+            src="../assets/images/blog/tuu-truong-combo.jpg"
+            alt="Combo đồ dùng tựu trường gồm sổ tay, bút, sticker và bookmark đồng bộ màu"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+          <figcaption>Combo tựu trường — mua một lần đủ, đồng bộ phong cách và tiết kiệm hơn.</figcaption>
+        </figure>
         <ul>
           <li><strong>Sổ tay / vở</strong>: 1–3 quyển tùy nhu cầu ghi chép.</li>
           <li><strong>Bút viết</strong>: bút gel + bút chì + tẩy (tùy cấp học).</li>
@@ -92,6 +109,16 @@
         </ul>
 
         <h2>2) Danh sách “nâng cấp” (góc học tập đẹp & gọn)</h2>
+        <figure class="figure">
+          <img
+            src="../assets/images/blog/tuu-truong-goc-hoc-tap.jpg"
+            alt="Góc học tập gọn gàng với đèn bàn, hộp bút và đồ dùng được sắp xếp ngăn nắp"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+          <figcaption>Bàn học gọn — thêm hộp đựng bút, đèn bàn và khay sắp xếp để dễ tập trung.</figcaption>
+        </figure>
         <ul>
           <li>Hộp đựng bút / khay đựng bàn học.</li>
           <li>Đèn bàn (ánh sáng đủ, chống mỏi mắt).</li>
@@ -111,9 +138,9 @@
           <a class="btn btn-ghost" href="../index.html#voucher">Nhận voucher 10%</a>
         </div>
 
-        <p style="margin-top:18px;color:#6b7280;font-weight:600">
-          Ảnh cần bổ sung thêm (tùy chọn): 1 ảnh “combo tựu trường”, 1 ảnh “bàn học gọn”. Đặt trong <code>/assets/images/blog/</code>, ví dụ: <code>tuu-truong-combo.jpg</code>, <code>tuu-truong-goc-hoc-tap.jpg</code>.
-        </p>
+        <div class="footer">
+          Bài viết bởi <a href="../index.html">KemStore.vn</a> — checklist đồ dùng tựu trường &amp; combo tiết kiệm.
+        </div>
       </article>
     </div>
   </main>

@@ -27,14 +27,18 @@
     :root{--kem:#ee5f6d;--bg:#fff8f6;}
     *{box-sizing:border-box}
     body{margin:0;font-family:Quicksand,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#111827}
+    a{color:inherit}
     .wrap{max-width:900px;margin:0 auto;padding:28px 16px 56px}
     .card{background:#fff;border:1px solid #f3f4f6;border-radius:24px;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,.06)}
     .hero{padding:28px 24px 10px}
     .badge{display:inline-flex;gap:8px;align-items:center;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--kem);background:#fef2f3;border:1px solid #f9d0d5;padding:8px 12px;border-radius:999px}
     h1{margin:14px 0 8px;font-size:34px;line-height:1.15}
     .meta{color:#6b7280;font-weight:600}
-    .cover{aspect-ratio:16/9;background:#f3f4f6;border-top:1px solid #f3f4f6;border-bottom:1px solid #f3f4f6}
-    .cover-note{padding:14px 18px;color:#6b7280;font-size:14px}
+    .cover{aspect-ratio:16/9;background:#f3f4f6;border-top:1px solid #f3f4f6;border-bottom:1px solid #f3f4f6;overflow:hidden}
+    .cover img{display:block;width:100%;height:100%;object-fit:cover}
+    .figure{margin:22px 0;border-radius:18px;overflow:hidden;border:1px solid #f3f4f6;background:#fafafa}
+    .figure img{display:block;width:100%;height:auto}
+    .figure figcaption{padding:10px 14px;color:#6b7280;font-size:14px;font-weight:600}
     .content{padding:24px}
     h2{margin:28px 0 12px;font-size:24px}
     h3{margin:20px 0 10px;font-size:18px}
@@ -46,6 +50,8 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800;text-decoration:none}
     .btn-primary{background:var(--kem);color:#fff}
     .btn-ghost{background:#fff;border:1px solid #f9d0d5;color:#111827}
+    .footer{margin-top:18px;color:#6b7280;font-weight:600;font-size:14px}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
   </style>
 
   <script type="application/ld+json">
@@ -71,12 +77,14 @@
       </header>
 
       <div class="cover">
-        <!-- Ảnh cover cần bổ sung:
-             /assets/images/blog/trang-tri-goc-hoc-tap-cover.jpg
-             Khuyến nghị: 1200×630 (OG), tối thiểu 960×540. -->
-      </div>
-      <div class="cover-note">
-        Gợi ý ảnh: góc bàn học sáng, gọn, có sticker + sổ tay + đèn bàn + 1 điểm nhấn màu <strong style="color:#ee5f6d">#ee5f6d</strong>.
+        <img
+          src="../assets/images/blog/trang-tri-goc-hoc-tap-cover.jpg"
+          alt="Góc học tập sáng và gọn với sticker, sổ tay, đèn bàn tông hồng kem"
+          width="1200"
+          height="675"
+          loading="eager"
+          fetchpriority="high"
+        />
       </div>
 
       <article class="content">
@@ -93,18 +101,58 @@
         <h2>9 ý tưởng trang trí góc học tập đẹp (dễ làm)</h2>
         <h3>1) Chọn 2–3 màu chủ đạo</h3>
         <p>Ví dụ: hồng–kem (hợp #ee5f6d) + trắng để góc học tập sáng và không rối.</p>
+        <figure class="figure">
+          <img
+            src="../assets/images/blog/goc-hoc-tap-1.jpg"
+            alt="Góc học tập phối màu hồng kem trắng đồng bộ, sáng và gọn mắt"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+          <figcaption>Phối 2–3 màu chủ đạo — đồ dùng cùng tông sẽ nhìn hài hòa hơn.</figcaption>
+        </figure>
 
         <h3>2) “Cụm sticker” thay vì dán rải rác</h3>
         <p>Dán 3–5 sticker cùng chủ đề ở một khu vực (bìa sổ, cạnh laptop) sẽ nhìn gọn và có điểm nhấn.</p>
+        <figure class="figure">
+          <img
+            src="../assets/images/blog/goc-hoc-tap-2.jpg"
+            alt="Cụm sticker cute dán gọn trên bìa sổ tay cùng một chủ đề"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+          <figcaption>Dán sticker theo cụm — gọn hơn dán rải rác khắp bàn.</figcaption>
+        </figure>
 
         <h3>3) Dùng note làm nhãn phân loại</h3>
         <p>Gắn note/label cho hộp bút, hộp phụ kiện để tiết kiệm thời gian mỗi lần học.</p>
+        <figure class="figure">
+          <img
+            src="../assets/images/blog/goc-hoc-tap-3.jpg"
+            alt="Hộp đựng đồ dùng có nhãn note phân loại gọn gàng trên bàn học"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+          <figcaption>Note/label giúp tìm đồ nhanh — đặc biệt hữu ích khi có nhiều phụ kiện.</figcaption>
+        </figure>
 
         <h3>4) Tối ưu ánh sáng</h3>
         <p>Đèn bàn ánh sáng trắng ấm, đặt lệch tay viết để giảm bóng đổ.</p>
 
         <h3>5) “Một điểm nhấn” là đủ</h3>
         <p>Chọn 1 món nổi bật (đèn/khay/bảng) + phần còn lại tối giản.</p>
+        <figure class="figure">
+          <img
+            src="../assets/images/blog/goc-hoc-tap-4.jpg"
+            alt="Đèn bàn làm điểm nhấn trong góc học tập tối giản"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+          <figcaption>Một điểm nhấn (đèn bàn) + phần còn lại tối giản — vừa đẹp vừa dễ dọn.</figcaption>
+        </figure>
 
         <h2>Gợi ý mua nhanh</h2>
         <p>Bạn có thể xem sản phẩm nổi bật trên KemStore.vn hoặc đặt hàng nhanh qua Shopee.</p>
@@ -115,9 +163,9 @@
           <a class="btn btn-ghost" href="../index.html#voucher">Nhận voucher 10%</a>
         </div>
 
-        <p style="margin-top:18px;color:#6b7280;font-weight:600">
-          Ảnh cần bổ sung thêm (tùy chọn): 2–4 ảnh minh họa từng ý tưởng. Đặt trong <code>/assets/images/blog/</code>, ví dụ: <code>goc-hoc-tap-1.jpg</code>…<code>goc-hoc-tap-4.jpg</code>.
-        </p>
+        <div class="footer">
+          Bài viết bởi <a href="../index.html">KemStore.vn</a> — gợi ý trang trí góc học tập &amp; đồ dùng cute.
+        </div>
       </article>
     </div>
   </main>
