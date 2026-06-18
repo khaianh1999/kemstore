@@ -677,7 +677,7 @@
                             <div class="px-6 sm:px-7 pb-7">
 
                                 <div class="relative rounded-3xl overflow-hidden border border-white/70">
-                                    <img src="./assets/images/hero-banner.png"
+                                    <img src="https://s6.imgcdn.dev/YbJSAe.png"
                                         alt="KemStore.vn - Sticker và đồ dùng học tập dễ thương"
                                         class="w-full h-64 sm:h-72 object-cover object-center" loading="lazy"
                                         onerror="this.src='./assets/images/back-to-school-banner.png'">
@@ -984,7 +984,7 @@
 
                             <div class="relative rounded-3xl overflow-hidden border-4 border-white/80 shadow-xl">
 
-                                <img src="./assets/images/back-to-school-banner.png"
+                                <img src="https://s6.imgcdn.dev/YbJrg0.png"
                                     alt="Combo Back To School - sticker và đồ dùng học tập Mèo Kem KemStore.vn"
                                     class="w-full h-64 sm:h-80 object-cover object-center" loading="lazy"
                                     onerror="this.src='./assets/images/blog/tuu-truong-combo.png'">
@@ -1601,16 +1601,29 @@
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
-                    <article v-for="video in youtubeVideos" :key="video.id"
-                        class="group bg-gray-50 rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:border-kem-200/50 transition">
+                    <a v-for="video in youtubeVideos" :key="video.id" :href="video.url" target="_blank"
+                        rel="noopener noreferrer"
+                        class="group block bg-gray-50 rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:border-kem-200/50 transition cursor-pointer">
 
                         <div class="relative aspect-video bg-gray-900 overflow-hidden">
 
-                            <iframe :src="getYoutubeEmbed(video.id)" :title="video.title"
-                                class="absolute inset-0 w-full h-full" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
-                            </iframe>
+                            <img :src="video.image || ('https://img.youtube.com/vi/' + video.id + '/hqdefault.jpg')"
+                                :alt="video.title"
+                                class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                                loading="lazy" decoding="async" width="480" height="270">
+
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition"></div>
+
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+
+                                <span
+                                    class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600 text-white shadow-lg shadow-black/30 transition transform group-hover:scale-110 group-hover:bg-red-500">
+
+                                    <i class="fa-solid fa-play text-2xl sm:text-3xl ml-1" aria-hidden="true"></i>
+
+                                </span>
+
+                            </div>
 
                         </div>
 
@@ -1625,16 +1638,15 @@
                                 {{ video.description }}
                             </p>
 
-                            <a :href="video.url" target="_blank" rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 mt-4 text-sm font-bold text-kem hover:underline">
+                            <span class="inline-flex items-center gap-2 mt-4 text-sm font-bold text-kem group-hover:underline">
 
-                                <i class="fa-brands fa-youtube"></i>
+                                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                                 Xem trên YouTube
-                            </a>
+                            </span>
 
                         </div>
 
-                    </article>
+                    </a>
 
                 </div>
 
@@ -2511,7 +2523,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lvlhxonkxmos03.webp',
                                 description: 'Bút dao rọc giấy tiện lợi, kèm 2 ngòi thay — phù hợp cắt sticker, bọc sách và trang trí sổ tay.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/B%C3%BAt-dao-r%E1%BB%8Dc-gi%E1%BA%A5y-(k%C3%A8m-2-ng%C3%B2i-thay-)-unbox-c%C3%B3-h%E1%BB%8Da-ti%E1%BA%BFt-v%C6%B0%C6%A1ng-mi%E1%BB%87n-trang-tr%C3%AD-d%E1%BB%85-th%C6%B0%C6%A1ng-i.82214893.26750629794'
                             },
 
                             {
@@ -2525,7 +2537,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lv4xrhtmjda146.webp',
                                 description: 'Bộ 200 tấm sticker đa mẫu — trang trí sổ tay, bìa sách, nhãn dán và góc học tập.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/Set-200-t%E1%BA%A5m-sticker-trang-tr%C3%AD-s%E1%BB%95-b%C3%ACa-s%C3%A1ch-nh%C3%A3n-d%C3%A1n-trang-tr%C3%AD-h%E1%BB%99p-qu%C3%A0-t%E1%BA%B7ng-d%E1%BB%85-th%C6%B0%C6%A1ng-i.82214893.25229806394'
                             },
 
                             {
@@ -2539,7 +2551,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lw80xfz6gc0paa.webp',
                                 description: 'Cuộn sticker 500 tem họa tiết gấu dâu và nhiều mẫu cute — dễ xé, dễ dán.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/Cu%E1%BB%99n-sticker-500-tem-nhi%E1%BB%81u-m%E1%BA%ABu-xinh-(-g%E1%BA%A5u-d%C3%A2u-kuromi-sin-cinnamoroll-...)-i.82214893.27552003791'
                             },
 
                             {
@@ -2553,7 +2565,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxtf45hd9bdl8f.webp',
                                 description: 'Sổ lò xo A5 120 trang họa tiết Purin dễ thương — ghi chép và ôn bài tiện lợi.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/s%E1%BB%95-l%C3%B2-xo-a5-purin-120-trang-i.82214893.26255522891'
                             },
 
                             {
@@ -2567,7 +2579,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxteik4uunrv2d.webp',
                                 description: 'Sổ lò xo A5 Sweetblue 120 trang — bìa xinh, giấy ghi chép mịn.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/s%E1%BB%95-l%C3%B2-xo-a5-swetblue-120-trang-i.82214893.26305518521'
                             },
 
                             {
@@ -2581,7 +2593,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxten42iwvrt17.webp',
                                 description: 'Sổ lò xo A5 Capybara 120 trang — hoạ tiết capybara siêu cute cho học sinh.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/s%E1%BB%95-l%C3%B2-xo-a5-cabybara-120-trang-i.82214893.26005694028'
                             },
 
                             {
@@ -2595,7 +2607,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lv4xgi6j8kc99c.webp',
                                 description: 'Bộ bút highlight 6 màu nắp vuốt mèo — tô sáng sách vở, dễ thương và tiện dụng.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/B%C3%BAt-highlight-6-m%C3%A0u-vu%E1%BB%91t-m%C3%A8o-si%C3%AAu-cute-d%E1%BB%85-th%C6%B0%C6%A1ng-i.82214893.24329798986'
                             },
 
                             {
@@ -2609,7 +2621,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m4m013o5jqbr9a.webp',
                                 description: 'Combo 150 tấm sticker nhãn dán trang trí — tặng kèm nhíp gắp, best seller KemStore.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/-t%E1%BA%B7ng-nh%C3%ADp-combo-150-t%E1%BA%A5m-sticker-nh%C3%A3n-d%C3%A1n-trang-tr%C3%AD-s%E1%BB%95-tay-nhi%E1%BB%81u-m%E1%BA%ABu-xinh-sticker-l%E1%BA%A5p-l%C3%A1nh-i.82214893.29472636657'
                             },
 
                             {
@@ -2623,7 +2635,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mcvlienavr1p68.webp',
                                 description: 'Sổ sticker mini tiện mang theo — trang trí vở, sổ tay và phụ kiện handmade.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/s%E1%BB%95-Sticker-mini-b%E1%BB%8F-t%C3%BAi-trang-tr%C3%AD-v%E1%BB%9F-m%C3%B3ng-tay-mi%E1%BA%BFng-d%C3%A1n-ch%E1%BB%91ng-th%E1%BA%A5m-n%C6%B0%E1%BB%9Bc-hoa%CC%A3t-hi%CC%80nh-%C4%91%C3%A1ng-y%C3%AAu-i.82214893.42961121655'
                             },
 
                             {
@@ -2637,7 +2649,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lv7buohif6d5fd.webp',
                                 description: 'Set bút bi bấm mực đen hoạ tiết cute — viết mượt, phù hợp học sinh sinh viên.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/SET-18-B%C3%9ATbi-b%E1%BA%A5m-sinh-vi%C3%AAn-ho%E1%BA%A1t-ti%E1%BA%BFt-cute-m%E1%BB%B1c-%C4%91en-c%C3%A1-m%E1%BA%ADp-kh%E1%BB%8Fng-long-(-6-c%C3%A2y-th%C3%A0nh-1-set-)-i.82214893.25980147625'
                             },
 
                             {
@@ -2651,7 +2663,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mlnnl4dk3oqqae.webp',
                                 description: 'Sổ lò xo A5 hoạt hình 120 trang — mẫu đa dạng, bán chạy trên Shopee.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/S%E1%BB%95-l%C3%B2-xo-A5-ho%E1%BA%A1t-h%C3%ACnh-d%E1%BB%85-th%C6%B0%C6%A1ng-120-trang-i.82214893.24530144935'
                             },
 
                             {
@@ -2665,7 +2677,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxtdeiqk4f6j67.webp',
                                 description: 'Combo đồ dùng học tập chủ đề Capybara — tiết kiệm hơn mua lẻ, quà tựu trường ý nghĩa.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/combo-h%E1%BB%8Dc-t%E1%BA%ADp-cabybara-siu-cute-i.82214893.29105517986'
                             },
 
                             {
@@ -2679,7 +2691,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxtesh28hqsb1e.webp',
                                 description: 'Sổ lò xo A5 khủng long 120 trang — bìa cứng cute, phù hợp ghi chép hằng ngày.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/s%E1%BB%95-l%C3%B2-xo-a5-kh%E1%BB%A7ng-long-cute-120-trang-i.82214893.27055522038'
                             },
 
                             {
@@ -2693,7 +2705,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m4m31c2xl2g099.webp',
                                 description: 'Móc khóa mèo bông treo chìa khóa, túi xách — phụ kiện cute làm quà tặng.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/M%C3%B3c-Kh%C3%B3a-M%C3%A8o-B%C3%B4ng-D%E1%BB%85-Th%C6%B0%C6%A1ng-Treo-M%C3%B3c-Ch%C3%ACa-Kh%C3%B3a-Ph%E1%BB%A5-Ki%E1%BB%87n-Qu%C3%A0-T%E1%BA%B7ng-i.82214893.29172641767'
                             },
 
                             {
@@ -2707,7 +2719,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m7brpf9n99gze2.webp',
                                 description: 'Sổ dán nam châm size to — ghi chú nhanh, dán tủ lạnh hoặc bàn học tiện lợi.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/-Size-to-S%E1%BB%95-d%C3%A1n-nam-ch%C3%A2m-t%E1%BB%AB-t%C3%ADnh-Natra-babythree-cappybara-nam-ch%C3%A2m-tranh-d%C3%A1n-nam-ch%C3%A2m-kuromi-h%C3%B3t-hit-cho-b%C3%A9-i.82214893.27029538997'
                             },
 
                             {
@@ -2721,7 +2733,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ltcnrmi744w4ea.webp',
                                 description: 'Sổ sticker cắt sẵn hàng trăm mẫu — kèm nhíp gắp, best seller 1k+ đã bán.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/s%E1%BB%95-sticker-c%C3%B3-c%E1%BA%AFt-s%E1%BA%B5n-siu-cute-(-k%C3%A8m-nhip-g%E1%BA%AFp-h%C6%A1n-1000-h%C3%ACnh-d%C3%A1n-)-i.82214893.24921061797'
                             },
 
                             {
@@ -2735,7 +2747,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mgosuscldudp73.webp',
                                 description: 'Combo 6 món gồm bút và vở — đủ bộ tựu trường, tiết kiệm chi phí.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/combo-6-m%C3%B3n-%C4%91%E1%BB%93-d%C3%B9ng-h%E1%BB%8Dc-t%E1%BA%ADp-g%E1%BB%93m-b%C3%BAt-v%C3%A0-v%E1%BB%9F-i.82214893.24880144028'
                             },
 
                             {
@@ -2749,7 +2761,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lv4xmy8zlfcpe6.webp',
                                 description: 'Bút chì bấm ngòi 0.5mm hoạ tiết khủng long — viết êm, thiết kế dễ thương.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/B%C3%BAt-ch%C3%AC-b%E1%BA%A5m-ng%C3%B2i-0.5mm-h%C3%ACnh-cute-h%C3%ACnh-kh%E1%BB%A7ng-long-qu%E1%BA%A3-%C4%91%C3%A0o-g%E1%BA%A5u-caramel-phi-h%C3%A0nh-gia-i.82214893.25029794732'
                             },
 
                             {
@@ -2763,7 +2775,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lwhzyo787pw90b.webp',
                                 description: 'Gương mini cầm tay hình gấu — bỏ túi tiện lợi, trang điểm và soi gương nhanh.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/combo-2-G%C6%B0%C6%A1ng-mini-b%E1%BB%8F-t%C3%BAi-c%E1%BA%A7m-tay-h%C3%ACnh-g%E1%BA%A5u-xinh-Trang-%C4%90i%E1%BB%83m-Cosmetic-i.82214893.29702829262'
                             },
 
                             {
@@ -2777,7 +2789,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mid7u2kvz954fe.webp',
                                 description: 'Sticker anime trang trí kèm móc khóa handmade — phong cách top idol, độc đáo.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/sticker-anime-trang-tr%C3%AD-top-m%C3%B3c-kh%C3%B3a-handmade-i.82214893.55553229200'
                             },
 
                             {
@@ -2791,7 +2803,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m4m0wp8st34793.webp',
                                 description: 'Lucky Box đồ học tập bất ngờ — gồm sách, móc khóa và phụ kiện cute.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/Lucky-Box-h%E1%BB%8Dc-t%E1%BA%ADp-combo-%C4%91%E1%BB%93-h%E1%BB%8Dc-t%E1%BA%ADp-s%C3%A1ch-m%C3%B3c-kh%C3%B3a-b%C3%BAt-th%C6%B0%E1%BB%9Bc-k%E1%BA%BB-...-v%C3%A0-nh%C3%ACu-%C4%91%E1%BB%93-xinh-i.82214893.27822646269'
                             },
 
                             {
@@ -2805,7 +2817,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mlx13vpu0lq80c.webp',
                                 description: 'Miếng dán sticker 3D pha lê dập nổi — lấp lánh, trang trí điện thoại và sổ tay.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/Sticker-h%C3%ACnh-D%C3%A1n-3D-Pha-L%C3%AA-D%E1%BA%ADp-N%E1%BB%95i-Mi%E1%BA%BFng-D%C3%A1n-Nh%C3%A3n-D%C3%A1n-D%E1%BA%ADp-N%E1%BB%95i-Pha-L%C3%AA-Thi%E1%BA%BFt-K%E1%BA%BF-3D-Cho-%C4%90i%E1%BB%87n-Tho%E1%BA%A1i-Di-%C4%90%E1%BB%99ng-Qu%C3%A0-T%E1%BA%B7ng-%C4%90%E1%BB%93-i.82214893.57907311119'
                             },
 
                             {
@@ -2819,7 +2831,7 @@
                                 favorite: false,
                                 image: 'https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m2trsb1x5i9mcf.webp',
                                 description: 'Sổ sticker chủ đề công chúa, thiên thần — nhiều mẫu xinh cho bé gái yêu thích.',
-                                link: 'https://shopee.vn/tiemtaphoanhakem'
+                                link: 'https://shopee.vn/s%E1%BB%95-sticker-c%C3%B4ng-ch%C3%BAa-thi%C3%AAn-th%E1%BA%A7n-xinh-%C4%91%E1%BA%B9p-i.82214893.27468189883'
                             }
 
                         ],
@@ -2829,19 +2841,22 @@
                                 id: 'wG9SowaP-Sg',
                                 title: 'Video Mèo Kem - Sticker & đồ dùng học tập',
                                 description: 'Khám phá bộ sưu tập sticker và văn phòng phẩm dễ thương từ KemStore.vn.',
-                                url: 'https://youtu.be/wG9SowaP-Sg'
+                                url: 'https://youtu.be/wG9SowaP-Sg',
+                                image: 'https://s6.imgcdn.dev/YbJAel.jpg'
                             },
                             {
                                 id: 'fmLY5IvPMck',
                                 title: 'Unbox đồ dùng học tập Mèo Kem',
                                 description: 'Xem chi tiết sản phẩm sticker, sổ tay và phụ kiện trang trí góc học tập.',
-                                url: 'https://youtu.be/fmLY5IvPMck'
+                                url: 'https://youtu.be/fmLY5IvPMck',
+                                image: 'https://s6.imgcdn.dev/YbJ2Gd.jpg'
                             },
                             {
                                 id: 'bGTsRtBtyuM',
                                 title: 'Gợi ý combo quà tặng tựu trường',
                                 description: 'Gợi ý combo học tập tiết kiệm, phù hợp làm quà cho học sinh.',
-                                url: 'https://youtu.be/bGTsRtBtyuM'
+                                url: 'https://youtu.be/bGTsRtBtyuM',
+                                image: 'https://s6.imgcdn.dev/YbJxQM.jpg'
                             }
                         ],
 
@@ -2945,12 +2960,6 @@
                     formatMoney(value) {
 
                         return new Intl.NumberFormat('vi-VN').format(value) + 'đ';
-
-                    },
-
-                    getYoutubeEmbed(videoId) {
-
-                        return 'https://www.youtube-nocookie.com/embed/' + videoId + '?rel=0';
 
                     },
 
