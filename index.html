@@ -164,8 +164,16 @@
         }
 
         #app {
-            overflow-x: clip;
             max-width: 100%;
+        }
+
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            width: 100%;
         }
 
         /* Ẩn popup/modal trước khi Vue mount — tránh nháy */
@@ -431,7 +439,7 @@
 
         <!-- HEADER -->
 
-        <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+        <header class="site-header bg-white/90 backdrop-blur border-b">
 
             <div class="max-w-7xl mx-auto px-4">
 
@@ -633,6 +641,8 @@
             </teleport>
 
         </header>
+
+        <div class="h-16 shrink-0" aria-hidden="true"></div>
 
         <!-- HERO -->
 
@@ -2853,7 +2863,7 @@
 
                         voucherFormSubmitting: false,
 
-                        vouchers: ['TIEMKEM', 'TIEMMEOKEM'],
+                        vouchers: ['TIEMKEM', 'TIEMKEMM'],
 
                         showVoucherReward: false,
                         voucherRewardCode: '',
