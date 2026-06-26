@@ -1,0 +1,100 @@
+---
+description: Template HTML/CSS và checklist xuất bản bài blog KemStore
+globs: blog/**/*.html
+alwaysApply: false
+---
+
+# Blog KemStore — Template & checklist
+
+Mỗi bài là **HTML tĩnh** trong `blog/`, CSS inline — không Vue, Tailwind, npm.
+
+User chỉ cần *"Viết blog chủ đề: …"*. Khi tạo bài mới (kể cả chưa có file), áp dụng rule này cùng `blog-seo-content.mdc`.
+
+## Checklist xuất bản
+
+- [ ] `blog/{slug}.html` — slug không dấu, nối `-`
+- [ ] Copy block `<style>` từ bài gần nhất — **không đổi class**
+- [ ] Meta SEO + JSON-LD (xem `blog-seo-content.mdc`)
+- [ ] Cover `../assets/images/blog/{slug}-cover.png` (1200×675); `og:image` absolute
+- [ ] ≥5 `h2`, mục lục, ≥1 `.shop-box`, FAQ 4 câu, CTA, related
+- [ ] Entry mảng `blogs` trong `index.html` + `<url>` trong `sitemap.xml`
+
+**Bài mẫu:** `blog/cach-trang-tri-goc-hoc-tap.html`
+
+## Cấu trúc HTML
+
+```
+<head> GA · meta · OG · Quicksand · <style> · JSON-LD @graph
+<body>
+  <main class="wrap"><div class="card">
+    <header class="hero"> breadcrumb · badge · h1 · .meta · .keyword-box.hidden
+    <div class="cover"><img>
+    <article class="content"> intro · .toc · sections · .shop-box · #faq · kết luận · .cta · .related · .footer
+```
+
+## CSS class
+
+| Class | Dùng khi |
+|-------|----------|
+| `.wrap` / `.card` | Layout |
+| `.breadcrumb` / `.badge` | Điều hướng |
+| `.keyword-box.hidden` | Ghi chú từ khóa (ẩn) |
+| `.cover` | Hero 16:9 |
+| `.toc` | Mục lục anchor |
+| `.tip` | Mẹo KemStore |
+| `.grid` + `.chip` | Checklist 2 cột |
+| `.table` | So sánh / giá |
+| `.figure` | Ảnh + figcaption |
+| `.shop-box` + `.shop-trust` | CTA giữa bài |
+| `.faq` + `<details>` | FAQ |
+| `.cta` + `.btn-*` | Nút cuối bài |
+| `.related` / `.footer` | Link liên quan / credit |
+
+Màu: `--kem:#ee5f6d`, `--bg:#fff8f6`, Shopee `#f94e30`.
+
+## CTA chuẩn
+
+```html
+<aside class="shop-box" aria-label="Mua … KemStore">
+  <h3>📚 {tiêu đề}</h3>
+  <p class="sub">{lợi ích}</p>
+  <div class="shop-trust">
+    <span>✓ 500+ mẫu</span><span>✓ Mèo Kem độc quyền</span><span>✓ Giao toàn quốc</span>
+  </div>
+  <div class="cta" style="margin-top:0">
+    <a class="btn btn-primary btn-lg" href="https://kemstore.vn/#products">Xem 500+ sản phẩm</a>
+    <a class="btn btn-dark btn-lg" href="https://vt.tiktok.com/ZS9jVsyhe92uq-upQ45/" target="_blank" rel="noopener noreferrer">TikTok Shop — Giá tốt</a>
+    <a class="btn btn-shopee" href="https://shopee.vn/tiemtaphoanhakem" target="_blank" rel="noopener noreferrer">Shopee</a>
+    <a class="btn btn-ghost" href="https://kemstore.vn/#voucher">Voucher 10%</a>
+  </div>
+</aside>
+```
+
+## Link & ảnh
+
+| Loại | Quy tắc |
+|------|---------|
+| Canonical, OG, schema | Absolute `https://kemstore.vn/...` |
+| Link giữa bài | Relative: `ten-bai.html` |
+| Ảnh body | `../assets/images/blog/...` hoặc CDN |
+| Cover `src` | Relative OK; `og:image` absolute |
+| Shop external | `target="_blank"` `rel="noopener noreferrer"` |
+
+## Tích hợp trang chủ
+
+```js
+// index.html → data().blogs
+{ id: 10, title: '…', description: '…', image: 'https://kemstore.vn/assets/images/blog/….png', link: './blog/{slug}.html' }
+```
+
+```xml
+<!-- sitemap.xml -->
+<url><loc>https://kemstore.vn/blog/{slug}.html</loc><lastmod>YYYY-MM-DD</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+```
+
+## Không làm
+
+- Không Vue/React/npm/build; không tách CSS riêng
+- Không `./` cho canonical/OG production
+- Không bỏ GA (`G-LBBQT5ZZX2`), schema, FAQ
+- Không commit trừ khi user yêu cầu

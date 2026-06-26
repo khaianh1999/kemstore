@@ -1,0 +1,63 @@
+---
+description: SEO, schema JSON-LD, giọng văn và outline nội dung bài blog KemStore
+globs: blog/**/*.html
+alwaysApply: false
+---
+
+# Blog KemStore — SEO & nội dung
+
+Áp dụng khi viết/sửa `blog/*.html`. Kết hợp với `blog-template.mdc`.
+
+## Meta SEO
+
+**Title:** `{Chủ đề}: {lợi ích/số lượng} {năm} | KemStore.vn` (≤ ~60 ký tự)
+
+**Description (150–160 ký tự):** từ khóa + nội dung cụ thể + CTA TikTok Shop/Shopee
+
+**Keywords:** 8–12 cụm, có `KemStore`, `đồ dùng học tập` / `sticker cute`
+
+| Field | Format |
+|-------|--------|
+| `.meta` | `Cập nhật: DD/MM/YYYY` |
+| `article:published_time` | `2026-01-15T08:00:00+07:00` |
+| Schema dates | `YYYY-MM-DD` |
+
+## JSON-LD — luôn 3 block trong `@graph`
+
+1. `BreadcrumbList`: Trang chủ → Blog (`/#blog`) → bài hiện tại
+2. `Article`: headline, description, image, dates, author/publisher KemStore.vn
+3. `FAQPage`: **4 câu** — câu cuối luôn *"Mua … ở đâu?"* → KemStore + TikTok Shop + Shopee
+
+FAQ trong `<details>` phải **khớp** nội dung `FAQPage` schema.
+
+## Outline nội dung (800–2000 từ, tiếng Việt)
+
+1. Đoạn mở — từ khóa `<strong>`, nêu đối tượng đọc
+2. `.toc` — 6–9 mục, mỗi `h2` có `id="kebab-case"`
+3. “Vì sao…” / xu hướng study aesthetic
+4. Hướng dẫn, checklist, bảng, ý tưởng đánh số
+5. ≥1 `.tip` — *"Mẹo KemStore:"*
+6. `.shop-box` giữa bài và/hoặc trước kết luận
+7. Lỗi thường gặp (4–5 mục)
+8. `#faq` — 4 câu
+9. Kết luận + `.cta`
+10. `.related` — 3–4 bài cùng chủ đề
+
+**Internal link:** ≥2 bài khác trong nội dung (không chỉ related).
+
+## Giọng văn
+
+- Đối tượng: học sinh, sinh viên, fan study aesthetic / TikTok
+- Tone thân thiện, thực tế; ngân sách gợi ý OK — không bịa số liệu không nguồn
+- Nhắc **Mèo Kem**, **KemStore.vn**, màu `#ee5f6d`
+- Tránh keyword stuffing, đoạn 1 câu, copy bài khác
+
+`.keyword-box.hidden`: ghi chú từ khóa / xu hướng / mùa tựu trường (ẩn user).
+
+## Bài hiện có (internal link)
+
+`top-sticker-cute-cho-hoc-sinh` · `cach-trang-tri-goc-hoc-tap` · `checklist-do-dung-tuu-truong` · `cach-trang-tri-so-tay-bang-sticker` · `combo-qua-tang-tuu-truong-tiet-kiem` · `bullet-journal-cho-hoc-sinh` · `cach-chon-but-gel-cute-hoc-sinh` · `scrapbook-study-aesthetic-hoc-sinh` · `cach-trang-tri-ban-lam-viec`
+
+## Sửa bài cũ
+
+Cập nhật `.meta`, `article:modified_time`, schema `dateModified`, `sitemap lastmod`. **Không đổi slug** nếu đã index.
