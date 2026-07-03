@@ -2845,6 +2845,7 @@
 
     </div>
 
+    <script src="./assets/js/shop-click-track.js" defer></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js" defer></script>
 
     <script defer>
@@ -3573,6 +3574,31 @@
 
                     },
 
+                    initShopClickContext() {
+
+                        if (!window.KemStoreShopTrack) return;
+
+                        const vm = this;
+
+                        window.KemStoreShopTrack.setExtraContext(() => ({
+
+                            keyword: vm.keyword,
+                            categoryName: vm.category !== 'all'
+                                ? (vm.categories.find(c => c.slug === vm.category)?.name || vm.category)
+                                : 'Tất cả',
+                            wishlistCount: vm.products.filter(p => p.favorite).length,
+                            productModal: vm.productModal
+
+                        }));
+
+                    },
+
+                    teardownShopClickContext() {
+
+                        if (window.KemStoreShopTrack) window.KemStoreShopTrack.setExtraContext(null);
+
+                    },
+
                     getTelegramDateFormat() {
 
                         const date = new Date();
@@ -4016,6 +4042,8 @@
 
                     }
 
+                    this.initShopClickContext();
+
                     this.injectYoutubeSchema();
 
                     this.$nextTick(() => {
@@ -4028,6 +4056,7 @@
 
                 beforeUnmount() {
 
+                    this.teardownShopClickContext();
                     this.teardownPopupListeners();
                     this.clearVoucherRewardTimer();
 
